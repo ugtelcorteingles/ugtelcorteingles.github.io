@@ -7,76 +7,190 @@
 <title>UGT El Corte Inglés</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
+    background: #f4f4f4;
     color: #202020;
 }
 
+/* CABECERA */
+
 header {
-    background: #e30613;
-    color: white;
-    text-align: center;
-    padding: 38px 20px 32px;
+    background: white;
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.ugt {
-    font-size: 48px;
+.cabecera {
+    max-width: 620px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca-ugt {
+    color: #e30613;
+    font-size: 38px;
     font-weight: 900;
     letter-spacing: -2px;
 }
 
-header h1 {
-    margin: 3px 0 8px;
-    font-size: 25px;
-    letter-spacing: .5px;
+.marca-texto {
+    margin-left: 12px;
+    flex: 1;
 }
 
-header p {
-    margin: 0;
-    font-size: 15px;
-    opacity: .95;
+.marca-texto strong {
+    display: block;
+    font-size: 16px;
 }
+
+.marca-texto span {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* HERO */
+
+.hero {
+    background: #202020;
+    color: white;
+    padding: 42px 22px 38px;
+}
+
+.hero-contenido {
+    max-width: 620px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 35px;
+    line-height: 1.05;
+    margin: 0 0 12px;
+    max-width: 450px;
+}
+
+.hero p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.linea-roja {
+    width: 48px;
+    height: 5px;
+    background: #e30613;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+/* CONTENIDO */
 
 main {
     max-width: 620px;
     margin: auto;
-    padding: 32px 18px 50px;
+    padding: 24px 16px 45px;
 }
 
-.intro {
-    text-align: center;
-    margin-bottom: 25px;
+/* ACCESOS */
+
+.accesos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: -48px;
+    margin-bottom: 34px;
 }
 
-.intro h2 {
-    margin: 0 0 7px;
+.acceso {
+    min-height: 115px;
+    background: white;
+    border-radius: 14px;
+    padding: 17px 12px;
+    text-decoration: none;
+    color: #202020;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.acceso:first-child {
+    background: #e30613;
+    color: white;
+}
+
+.acceso-icono {
     font-size: 25px;
+    margin-bottom: auto;
 }
 
-.intro p {
+.acceso strong {
+    font-size: 13px;
+    line-height: 1.1;
+}
+
+.acceso small {
+    display: block;
+    font-size: 10px;
+    margin-top: 5px;
+    opacity: .75;
+    line-height: 1.2;
+}
+
+/* TERRITORIOS */
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.titulo-seccion::before {
+    content: "";
+    width: 28px;
+    height: 4px;
+    background: #e30613;
+    border-radius: 4px;
+}
+
+.titulo-seccion h2 {
     margin: 0;
-    color: #666;
+    font-size: 20px;
+}
+
+.territorios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 
 details {
     background: white;
-    margin-bottom: 13px;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 9px rgba(0,0,0,.08);
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
 }
 
 summary {
     list-style: none;
     cursor: pointer;
-    padding: 20px;
-    font-size: 19px;
-    font-weight: 800;
-    border-left: 6px solid #e30613;
+    min-height: 110px;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 900;
+    display: flex;
+    align-items: flex-end;
     position: relative;
 }
 
@@ -85,42 +199,102 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-    content: "＋";
+    content: "→";
     position: absolute;
-    right: 20px;
+    right: 17px;
+    bottom: 17px;
     color: #e30613;
-    font-size: 22px;
-    top: 17px;
+    font-size: 20px;
+}
+
+details[open] {
+    grid-column: 1 / -1;
+}
+
+details[open] summary {
+    min-height: 70px;
+    background: #202020;
+    color: white;
 }
 
 details[open] summary::after {
-    content: "−";
+    content: "×";
+    color: white;
 }
 
 .centros {
-    padding: 0 18px 18px 24px;
+    padding: 8px 12px 14px;
 }
 
 .centro {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-decoration: none;
-    color: #333;
+    color: #202020;
     background: #f5f5f5;
-    padding: 14px 16px;
+    padding: 15px;
     margin-top: 8px;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
-.centro:hover {
-    background: #ededed;
+.centro::after {
+    content: "›";
+    color: #e30613;
+    font-size: 22px;
 }
+
+/* MENSAJE FINAL */
+
+.compromiso {
+    background: #fff;
+    margin-top: 28px;
+    border-radius: 14px;
+    padding: 20px;
+    border-left: 5px solid #e30613;
+}
+
+.compromiso strong {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.compromiso span {
+    font-size: 13px;
+    color: #666;
+}
+
+/* FOOTER */
 
 footer {
     text-align: center;
-    color: #777;
-    font-size: 13px;
-    padding: 5px 20px 35px;
+    color: #888;
+    font-size: 11px;
+    padding: 5px 20px 30px;
+}
+
+/* ORDENADOR */
+
+@media (min-width: 700px) {
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .acceso {
+        min-height: 135px;
+    }
+
+    .territorios {
+        gap: 16px;
+    }
+
+    summary {
+        min-height: 130px;
+    }
 }
 </style>
 </head>
@@ -128,56 +302,102 @@ footer {
 <body>
 
 <header>
-    <div class="ugt">UGT</div>
-    <h1>EL CORTE INGLÉS</h1>
-    <p>Andalucía Occidental · Extremadura</p>
+    <div class="cabecera">
+        <div class="marca-ugt">UGT</div>
+
+        <div class="marca-texto">
+            <strong>EL CORTE INGLÉS</strong>
+            <span>Andalucía Occidental · Extremadura</span>
+        </div>
+    </div>
 </header>
+
+<section class="hero">
+    <div class="hero-contenido">
+        <div class="linea-roja"></div>
+        <h1>Estamos más cerca de ti.</h1>
+        <p>Información, apoyo y contacto directo con UGT en tu centro de trabajo.</p>
+    </div>
+</section>
 
 <main>
 
-<div class="intro">
-    <h2>Tu UGT, más cerca</h2>
-    <p>Selecciona tu territorio y tu centro</p>
-</div>
+    <div class="accesos">
 
-<details>
-    <summary>SEVILLA</summary>
-    <div class="centros">
-        <a class="centro" href="sanjuan.html">San Juan</a>
-        <a class="centro" href="#">Plaza del Duque</a>
-        <a class="centro" href="#">Nervión</a>
-        <a class="centro" href="#">Sevilla Este</a>
-    </div>
-</details>
+        <a class="acceso" href="#territorios">
+            <div class="acceso-icono">●</div>
+            <strong>TU CENTRO</strong>
+            <small>Encuentra tu centro</small>
+        </a>
 
-<details>
-    <summary>HUELVA</summary>
-    <div class="centros">
-        <a class="centro" href="#">Costa de la Luz</a>
-    </div>
-</details>
+        <a class="acceso" href="contacto.html">
+            <div class="acceso-icono">✉</div>
+            <strong>CONTACTA</strong>
+            <small>Habla con UGT</small>
+        </a>
 
-<details>
-    <summary>CÓRDOBA</summary>
-    <div class="centros">
-        <a class="centro" href="#">Ronda de los Tejares</a>
-        <a class="centro" href="#">Ronda de Córdoba</a>
-    </div>
-</details>
+        <a class="acceso" href="buzon.html">
+            <div class="acceso-icono">▣</div>
+            <strong>BUZÓN</strong>
+            <small>Cuéntanos qué pasa</small>
+        </a>
 
-<details>
-    <summary>EXTREMADURA</summary>
-    <div class="centros">
-        <a class="centro" href="#">Conquistadores</a>
-        <a class="centro" href="#">Avenida Juan Carlos I</a>
     </div>
-</details>
+
+    <section id="territorios">
+
+        <div class="titulo-seccion">
+            <h2>Encuentra tu centro</h2>
+        </div>
+
+        <div class="territorios">
+
+            <details>
+                <summary>SEVILLA</summary>
+                <div class="centros">
+                    <a class="centro" href="sanjuan.html">San Juan</a>
+                    <a class="centro" href="#">Plaza del Duque</a>
+                    <a class="centro" href="#">Nervión</a>
+                    <a class="centro" href="#">Sevilla Este</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>HUELVA</summary>
+                <div class="centros">
+                    <a class="centro" href="#">Costa de la Luz</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>CÓRDOBA</summary>
+                <div class="centros">
+                    <a class="centro" href="#">Ronda de los Tejares</a>
+                    <a class="centro" href="#">Ronda de Córdoba</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>EXTREMADURA</summary>
+                <div class="centros">
+                    <a class="centro" href="#">Conquistadores</a>
+                    <a class="centro" href="#">Avenida Juan Carlos I</a>
+                </div>
+            </details>
+
+        </div>
+
+    </section>
+
+    <div class="compromiso">
+        <strong>Tu trabajo. Tus derechos.</strong>
+        <span>UGT, a tu lado en tu centro de trabajo.</span>
+    </div>
 
 </main>
 
 <footer>
-    UGT El Corte Inglés<br>
-    Andalucía Occidental · Extremadura
+    UGT El Corte Inglés · Andalucía Occidental · Extremadura
 </footer>
 
 </body>
