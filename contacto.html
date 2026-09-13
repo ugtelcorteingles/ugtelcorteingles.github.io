@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacta con UGT | El Corte Inglés</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+header {
+    background: #e30613;
+    color: white;
+    text-align: center;
+    padding: 28px 20px;
+}
+
+.ugt {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+header h1 {
+    font-size: 23px;
+    margin: 3px 0;
+}
+
+header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+}
+
+main {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px 20px 50px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.intro h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.intro p {
+    color: #666;
+    line-height: 1.5;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 18px 0 7px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 17px;
+    border: 0;
+    border-radius: 11px;
+    background: #e30613;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.privacidad {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.volver {
+    display: block;
+    text-align: center;
+    margin-top: 28px;
+    color: #666;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    padding-bottom: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="ugt">UGT</div>
+<h1>EL CORTE INGLÉS</h1>
+<p>Andalucía Occidental · Extremadura</p>
+</header>
+
+<main>
+
+<div class="intro">
+<h2>CONTACTA CON UGT</h2>
+<p>
+¿Tienes alguna duda, problema o propuesta?<br>
+Cuéntanoslo y dinos cómo prefieres que nos pongamos en contacto contigo.
+</p>
+</div>
+
+<form>
+
+<label for="centro">Centro de trabajo</label>
+
+<select id="centro" name="centro" required>
+<option value="">Selecciona tu centro</option>
+
+<option>San Juan</option>
+<option>Plaza del Duque</option>
+<option>Nervión</option>
+<option>Sevilla Este</option>
+<option>Costa de la Luz</option>
+<option>Ronda de los Tejares</option>
+<option>Ronda de Córdoba</option>
+<option>Conquistadores</option>
+<option>Avenida Juan Carlos I</option>
+
+</select>
+
+<label for="nombre">Nombre</label>
+<input
+type="text"
+id="nombre"
+name="nombre"
+placeholder="Tu nombre">
+
+<label for="contacto">Teléfono / WhatsApp o email</label>
+<input
+type="text"
+id="contacto"
+name="contacto"
+placeholder="Indícanos cómo podemos contactar contigo"
+required>
+
+<label for="mensaje">¿En qué podemos ayudarte?</label>
+
+<textarea
+id="mensaje"
+name="mensaje"
+placeholder="Escribe aquí tu consulta..."
+required></textarea>
+
+<button type="submit">
+ENVIAR CONSULTA
+</button>
+
+<p class="privacidad">
+Tus datos se utilizarán únicamente para poder atender y responder a esta consulta.
+</p>
+
+</form>
+
+<a class="volver" href="index.html">
+← Volver
+</a>
+
+</main>
+
+<footer>
+UGT El Corte Inglés<br>
+Andalucía Occidental · Extremadura
+</footer>
+
+</body>
+</html>
