@@ -206,5 +206,18 @@ UGT El Corte Inglés<br>
 Andalucía Occidental · Extremadura
 </footer>
 
+<script>
+const parametros = new URLSearchParams(window.location.search);
+const centro = parametros.get("centro");
+
+if (centro) {
+    const selector = document.querySelector('select[name="centro"]');
+
+    if (selector) {
+        selector.value = centro;
+    }
+}
+</script>
+
 </body>
 </html>
