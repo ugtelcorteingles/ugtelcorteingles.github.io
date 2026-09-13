@@ -213,8 +213,39 @@ footer {
     name="mensaje"
     placeholder="Describe aquí lo ocurrido..."
     required></textarea>
+<div class="contacto-opcional">
 
-<div class="archivo">
+    <label>¿Quieres que UGT se ponga en contacto contigo?</label>
+
+    <div class="opciones-contacto">
+        <label>
+            <input type="radio" name="quiereContacto" value="no" checked>
+            No, prefiero mantener el anonimato
+        </label>
+
+        <label>
+            <input type="radio" name="quiereContacto" value="si">
+            Sí, quiero que contactéis conmigo
+        </label>
+    </div>
+
+    <div id="datosContacto" style="display:none;">
+        <label for="nombre">Nombre (opcional)</label>
+        <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre">
+
+        <label for="contacto">Teléfono / WhatsApp o email</label>
+        <input
+            type="text"
+            id="contacto"
+            name="contacto"
+            placeholder="Indícanos cómo podemos contactar contigo">
+    </div>
+
+</div><div class="archivo">
 
 <label for="archivos">Adjuntar archivos <span style="font-weight:normal;">(opcional)</span></label>
 
@@ -257,8 +288,29 @@ Andalucía Occidental · Extremadura
 
 
 <script>
+const opcionesContacto = document.querySelectorAll('input[name="quiereContacto"]');
+const datosContacto = document.getElementById('datosContacto');
+const campoContacto = document.getElementById('contacto');
+const botonEnviar = document.querySelector('#buzonForm button[type="submit"]');
 
-/* Selecciona automáticamente el centro desde el que llega el usuario */
+opcionesContacto.forEach(opcion => {
+    opcion.addEventListener('change', function() {
+
+        if (this.value === 'si') {
+            datosContacto.style.display = 'block';
+            campoContacto.required = true;
+            botonEnviar.textContent = 'ENVIAR INFORMACIÓN';
+        } else {
+            datosContacto.style.display = 'none';
+            campoContacto.required = false;
+            campoContacto.value = '';
+            document.getElementById('nombre').value = '';
+            botonEnviar.textContent = 'ENVIAR INFORMACIÓN ANÓNIMA';
+        }
+
+    });
+});
+    /* Selecciona automáticamente el centro desde el que llega el usuario */
 
 const parametros = new URLSearchParams(window.location.search);
 const centro = parametros.get("centro");
