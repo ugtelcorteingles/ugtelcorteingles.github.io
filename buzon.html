@@ -6,8 +6,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Buzón | UGT El Corte Inglés</title>
+.opciones-contacto {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 
-<style>
+.opcion-contacto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.opcion-contacto:hover {
+  border-color: #e30613;
+}
+
+.opcion-contacto:has(input:checked) {
+  border-color: #e30613;
+  background: #fff5f5;
+}
+
+.opcion-contacto input {
+  accent-color: #e30613;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.opcion-contacto span {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcion-contacto strong {
+  font-size: 15px;
+  color: #222;
+}
+
+.opcion-contacto small {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+}<style>
 
 * {
     box-sizing: border-box;
@@ -217,18 +266,25 @@ footer {
 
     <label>¿Quieres que UGT se ponga en contacto contigo?</label>
 
-    <div class="opciones-contacto">
-        <label>
-            <input type="radio" name="quiereContacto" value="no" checked>
-            No, prefiero mantener el anonimato
-        </label>
+   <div class="opciones-contacto">
 
-        <label>
-            <input type="radio" name="quiereContacto" value="si">
-            Sí, quiero que contactéis conmigo
-        </label>
-    </div>
+  <label class="opcion-contacto">
+    <input type="radio" name="quiereContacto" value="no" checked>
+    <span>
+      <strong>Mantener el anonimato</strong>
+      <small>No necesito que UGT contacte conmigo</small>
+    </span>
+  </label>
 
+  <label class="opcion-contacto">
+    <input type="radio" name="quiereContacto" value="si">
+    <span>
+      <strong>Quiero que contactéis conmigo</strong>
+      <small>Podré indicar mis datos de contacto</small>
+    </span>
+  </label>
+
+</div>
     <div id="datosContacto" style="display:none;">
         <label for="nombre">Nombre (opcional)</label>
         <input
@@ -268,11 +324,8 @@ ENVIAR INFORMACIÓN ANÓNIMA
 </button>
 
 <p class="privacidad">
-No te solicitamos nombre, teléfono ni correo electrónico.
-Antes de activar el envío definitivo indicaremos aquí qué datos técnicos
-puede recibir el servicio utilizado para procesar el formulario.
+  Tus datos solo se utilizarán para atender tu consulta si solicitas que contactemos contigo.
 </p>
-
 </form>
 
 <a class="volver" href="javascript:history.back()">
