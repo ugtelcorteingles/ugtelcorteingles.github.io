@@ -201,7 +201,57 @@ footer {
     font-size: 12px;
     padding: 20px;
 }
+.opciones-contacto {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 
+.opcion-contacto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.opcion-contacto:hover {
+  border-color: #e30613;
+}
+
+.opcion-contacto:has(input:checked) {
+  border-color: #e30613;
+  background: #fff5f5;
+}
+
+.opcion-contacto input {
+  width: 18px;
+  height: 18px;
+  accent-color: #e30613;
+  flex-shrink: 0;
+}
+
+.opcion-contacto span {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcion-contacto strong {
+  font-size: 15px;
+  color: #222;
+}
+
+.opcion-contacto small {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+}
 </style>
 </head>
 
