@@ -3,17 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>UGT El Corte Inglés</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -23,10 +18,9 @@ body {
 }
 
 /* CABECERA */
-
 header {
     background: #ffffff;
-    padding: 15px 18px;
+    padding: 10px 16px;
     border-bottom: 1px solid #eeeeee;
 }
 
@@ -35,11 +29,11 @@ header {
     margin: auto;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
 }
 
 .logo-ugt {
-    width: 105px;
+    width: 120px;
     height: auto;
     display: block;
 }
@@ -71,18 +65,12 @@ header {
 }
 
 /* PORTADA */
-
 .hero {
     position: relative;
-    min-height: 330px;
+    min-height: 350px;
     background-image:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.12),
-            rgba(0,0,0,.82)
-        ),
+        linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.84)),
         url("portada.png");
-
     background-size: cover;
     background-position: center;
     display: flex;
@@ -120,8 +108,18 @@ header {
     line-height: 1.4;
 }
 
-/* CONTENIDO */
+/* MENSAJE REIVINDICATIVO */
+.mensaje-sindical {
+    margin-top: 17px;
+    padding-left: 12px;
+    border-left: 4px solid #e30613;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.25;
+    font-weight: 800;
+}
 
+/* CONTENIDO */
 main {
     max-width: 680px;
     margin: auto;
@@ -129,7 +127,6 @@ main {
 }
 
 /* ACCESOS */
-
 .accesos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -148,7 +145,6 @@ main {
     text-decoration: none;
     color: #202020;
     box-shadow: 0 6px 20px rgba(0,0,0,.13);
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -160,8 +156,20 @@ main {
 }
 
 .acceso-icono {
-    font-size: 23px;
+    width: 27px;
+    height: 27px;
     margin-bottom: auto;
+}
+
+.acceso-icono svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .acceso strong {
@@ -177,7 +185,6 @@ main {
 }
 
 /* TITULO */
-
 .titulo-seccion {
     display: flex;
     align-items: center;
@@ -199,7 +206,6 @@ main {
 }
 
 /* TERRITORIOS */
-
 .territorios {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -218,15 +224,12 @@ summary {
     cursor: pointer;
     min-height: 155px;
     padding: 17px;
-
     display: flex;
     align-items: flex-end;
-
     position: relative;
     color: white;
     font-size: 17px;
     font-weight: 900;
-
     background-size: cover;
     background-position: center;
 }
@@ -235,21 +238,16 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-/* OSCURECIDO DE LAS FOTOS */
-
 summary::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.05),
-            rgba(0,0,0,.72)
-        );
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.72)
+    );
 }
-
-/* FOTOS */
 
 .sevilla summary {
     background-image: url("sevilla.png");
@@ -267,14 +265,10 @@ summary::before {
     background-image: url("extremadura.png");
 }
 
-/* TEXTO TERRITORIO */
-
 .nombre-territorio {
     position: relative;
     z-index: 2;
 }
-
-/* FLECHA */
 
 summary::after {
     content: "→";
@@ -285,8 +279,6 @@ summary::after {
     color: white;
     font-size: 22px;
 }
-
-/* TERRITORIO ABIERTO */
 
 details[open] {
     grid-column: 1 / -1;
@@ -301,7 +293,6 @@ details[open] summary::after {
 }
 
 /* CENTROS */
-
 .centros {
     padding: 7px 12px 14px;
 }
@@ -310,15 +301,12 @@ details[open] summary::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     text-decoration: none;
     color: #202020;
     background: #f5f5f5;
-
     padding: 15px;
     margin-top: 8px;
     border-radius: 10px;
-
     font-weight: 700;
     font-size: 14px;
 }
@@ -330,13 +318,12 @@ details[open] summary::after {
 }
 
 /* CONOCE TUS DERECHOS */
-
 .derechos {
     margin-top: 30px;
     background: #202020;
     color: white;
     border-radius: 17px;
-    padding: 23px 20px;
+    padding: 23px 52px 23px 20px;
     text-decoration: none;
     display: block;
     position: relative;
@@ -369,6 +356,7 @@ details[open] summary::after {
 .derechos span {
     color: #cccccc;
     font-size: 13px;
+    line-height: 1.35;
 }
 
 .derechos .flecha {
@@ -378,8 +366,28 @@ details[open] summary::after {
     font-size: 25px;
 }
 
-/* FOOTER */
+/* CIERRE */
+.cierre-portada {
+    text-align: center;
+    padding: 32px 10px 5px;
+}
 
+.cierre-portada strong {
+    display: block;
+    color: #202020;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.cierre-portada span {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    font-size: 11px;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     color: #888;
@@ -387,10 +395,7 @@ footer {
     padding: 8px 20px 30px;
 }
 
-/* ORDENADOR */
-
 @media (min-width: 700px) {
-
     .hero {
         min-height: 410px;
     }
@@ -413,30 +418,23 @@ footer {
 <body>
 
 <header>
-
     <div class="cabecera">
 
         <img
             class="logo-ugt"
             src="logo.png"
-            alt="UGT">
+            alt="UGT FeSMC"
+        >
 
         <div class="marca-texto">
-
             <strong>EL CORTE INGLÉS</strong>
-
-            <span class="fesmc">
-                FeSMC
-            </span>
-
+            <span class="fesmc">FeSMC</span>
             <span class="territorio">
                 Andalucía Occidental · Extremadura
             </span>
-
         </div>
 
     </div>
-
 </header>
 
 
@@ -453,6 +451,10 @@ footer {
             con UGT en tu centro de trabajo.
         </p>
 
+        <div class="mensaje-sindical">
+            Hay otra forma de hacer las cosas.
+        </div>
+
     </div>
 
 </section>
@@ -460,55 +462,64 @@ footer {
 
 <main>
 
+<!-- ACCESOS PRINCIPALES -->
+
 <div class="accesos">
 
     <a class="acceso" href="#territorios">
 
-        <div class="acceso-icono">●</div>
+        <div class="acceso-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+        </div>
 
         <strong>TU CENTRO</strong>
-
-        <small>
-            Encuentra tu centro
-        </small>
+        <small>Encuentra tu centro</small>
 
     </a>
 
 
     <a class="acceso" href="contacto.html">
 
-        <div class="acceso-icono">✉</div>
+        <div class="acceso-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 13h5"></path>
+            </svg>
+        </div>
 
         <strong>CONTACTA</strong>
-
-        <small>
-            Habla con UGT
-        </small>
+        <small>Habla con UGT</small>
 
     </a>
 
 
     <a class="acceso" href="buzon.html">
 
-        <div class="acceso-icono">▣</div>
+        <div class="acceso-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+            </svg>
+        </div>
 
         <strong>BUZÓN</strong>
-
-        <small>
-            Cuéntanos qué pasa
-        </small>
+        <small>Cuéntanos qué pasa</small>
 
     </a>
 
 </div>
 
 
+<!-- TERRITORIOS -->
+
 <section id="territorios">
 
 <div class="titulo-seccion">
-
     <h2>Encuentra tu centro</h2>
-
 </div>
 
 
@@ -518,9 +529,7 @@ footer {
 <details class="sevilla">
 
     <summary>
-        <span class="nombre-territorio">
-            SEVILLA
-        </span>
+        <span class="nombre-territorio">SEVILLA</span>
     </summary>
 
     <div class="centros">
@@ -549,9 +558,7 @@ footer {
 <details class="huelva">
 
     <summary>
-        <span class="nombre-territorio">
-            HUELVA
-        </span>
+        <span class="nombre-territorio">HUELVA</span>
     </summary>
 
     <div class="centros">
@@ -568,9 +575,7 @@ footer {
 <details class="cordoba">
 
     <summary>
-        <span class="nombre-territorio">
-            CÓRDOBA
-        </span>
+        <span class="nombre-territorio">CÓRDOBA</span>
     </summary>
 
     <div class="centros">
@@ -591,9 +596,7 @@ footer {
 <details class="extremadura">
 
     <summary>
-        <span class="nombre-territorio">
-            EXTREMADURA
-        </span>
+        <span class="nombre-territorio">EXTREMADURA</span>
     </summary>
 
     <div class="centros">
@@ -616,6 +619,8 @@ footer {
 </section>
 
 
+<!-- INFORMACIÓN LABORAL -->
+
 <a class="derechos" href="#">
 
     <small>INFORMACIÓN LABORAL</small>
@@ -629,6 +634,21 @@ footer {
     <div class="flecha">→</div>
 
 </a>
+
+
+<!-- CIERRE -->
+
+<div class="cierre-portada">
+
+    <strong>
+        TU CENTRO · TUS DERECHOS · TU VOZ
+    </strong>
+
+    <span>
+        UGT El Corte Inglés · FeSMC
+    </span>
+
+</div>
 
 
 </main>
