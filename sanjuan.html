@@ -9,74 +9,255 @@
 <style>
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f4f4;
-    color: #222;
+    color: #202020;
 }
 
+/* CABECERA */
 header {
-    background: #e30613;
-    color: white;
-    text-align: center;
-    padding: 24px 20px;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.ugt {
-    font-size: 35px;
+.cabecera {
+    max-width: 680px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-ugt {
+    width: 112px;
+    height: auto;
+    display: block;
+}
+
+.marca-texto {
+    flex: 1;
+}
+
+.marca-texto strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.marca-texto .fesmc {
+    display: block;
+    color: #e30613;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.marca-texto .territorio {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+/* HERO SAN JUAN */
+.hero {
+    min-height: 320px;
+    position: relative;
+    background-image:
+        linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.86)),
+        url("portada.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-contenido {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+    padding: 45px 22px 45px;
+}
+
+.etiqueta-centro {
+    display: inline-block;
+    background: #e30613;
+    color: #ffffff;
+    padding: 7px 11px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .7px;
+    margin-bottom: 13px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1;
     font-weight: 900;
 }
 
-header h1 {
-    margin: 2px 0;
-    font-size: 20px;
+.hero h2 {
+    margin: 8px 0 7px;
+    font-size: 21px;
+    line-height: 1.15;
 }
 
-header p {
-    margin: 5px 0 0;
-    font-size: 13px;
-}
-
-main {
-    max-width: 620px;
-    margin: auto;
-    padding: 25px 18px 45px;
-}
-
-.centro {
-    background: #222;
-    color: white;
-    border-radius: 16px;
-    padding: 38px 20px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.centro h2 {
-    font-size: 30px;
+.hero p {
     margin: 0;
+    color: #e6e6e6;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 420px;
 }
 
-.centro p {
-    margin: 7px 0 0;
-    opacity: .8;
+/* CONTENIDO */
+main {
+    max-width: 680px;
+    margin: auto;
+    padding: 24px 16px 0;
 }
 
-.titulo {
-    text-align: center;
-    margin: 25px 0 15px;
+/* TITULOS */
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 7px 0 16px;
 }
 
-.titulo h3 {
-    margin: 0 0 5px;
+.titulo-seccion::before {
+    content: "";
+    width: 30px;
+    height: 5px;
+    background: #e30613;
+    border-radius: 10px;
+}
+
+.titulo-seccion h3 {
+    margin: 0;
+    font-size: 21px;
+}
+
+/* ACCIONES */
+.acciones {
+    display: grid;
+    gap: 11px;
+}
+
+.accion {
+    display: flex;
+    align-items: center;
+    min-height: 105px;
+    padding: 20px;
+    border-radius: 16px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.accion-contacto {
+    background: #e30613;
+}
+
+.accion-buzon {
+    background: #202020;
+}
+
+.accion-icono {
+    width: 35px;
+    height: 35px;
+    margin-right: 16px;
+    flex: 0 0 35px;
+}
+
+.accion-icono svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.accion-texto {
+    padding-right: 25px;
+}
+
+.accion strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.accion span {
+    display: block;
+    font-size: 13px;
+    line-height: 1.3;
+    opacity: .88;
+}
+
+.flecha {
+    position: absolute;
+    right: 18px;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* INFORMACION CENTRO */
+.info-centro {
+    margin-top: 27px;
+    background: white;
+    border-radius: 16px;
+    padding: 21px 19px;
+    box-shadow: 0 3px 13px rgba(0,0,0,.07);
+}
+
+.info-centro small {
+    display: block;
+    color: #e30613;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .6px;
+    margin-bottom: 5px;
+}
+
+.info-centro strong {
+    display: block;
     font-size: 20px;
+    margin-bottom: 6px;
 }
 
-.titulo p {
+.info-centro p {
     margin: 0;
     color: #666;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+/* REDES */
+.social {
+    margin-top: 30px;
+}
+
+.social-intro {
+    color: #666;
+    font-size: 13px;
+    margin: -8px 0 15px;
 }
 
 .redes {
@@ -85,76 +266,115 @@ main {
     gap: 10px;
 }
 
-.boton {
-    display: block;
-    background: white;
-    color: #222;
-    text-decoration: none;
-    padding: 17px 10px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-.acciones {
-    margin-top: 25px;
-}
-
-.contacto {
-    display: block;
-    background: #e30613;
-    color: white;
-    text-decoration: none;
+.red {
+    background: #ffffff;
+    color: #202020;
+    min-height: 63px;
     border-radius: 13px;
-    padding: 20px;
-    margin-bottom: 12px;
-}
-
-.contacto strong {
-    display: block;
-    font-size: 19px;
-    margin-bottom: 4px;
-}
-
-.contacto span {
-    font-size: 14px;
-}
-
-.anonimo {
-    display: block;
-    background: #222;
-    color: white;
     text-decoration: none;
-    border-radius: 13px;
-    padding: 20px;
-}
-
-.anonimo strong {
-    display: block;
-    font-size: 19px;
-    margin-bottom: 4px;
-}
-
-.anonimo span {
+    display: flex;
+    align-items: center;
+    padding: 14px;
     font-size: 14px;
-    color: #ddd;
+    font-weight: 800;
+    box-shadow: 0 2px 9px rgba(0,0,0,.07);
 }
 
+.red-icono {
+    width: 29px;
+    height: 29px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 9px;
+    font-size: 12px;
+    font-weight: 900;
+    color: #e30613;
+}
+
+/* VOLVER */
 .volver {
-    display: block;
-    text-align: center;
-    margin-top: 30px;
+    display: inline-block;
+    margin: 29px 0;
     color: #666;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 700;
 }
 
-footer {
-    text-align: center;
-    color: #888;
-    font-size: 12px;
-    padding: 0 20px 30px;
+/* CIERRE */
+.cierre-rojo {
+    background: #e30613;
+    color: #ffffff;
+    padding: 31px 24px 29px;
+    border-radius: 18px 18px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cierre-rojo::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 28px solid rgba(255,255,255,.07);
+    border-radius: 50%;
+    right: -70px;
+    top: -65px;
+}
+
+.cierre-linea {
+    width: 42px;
+    height: 5px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.cierre-rojo h2 {
+    margin: 0;
+    font-size: 29px;
+    line-height: 1.02;
+    font-weight: 900;
+    letter-spacing: -.5px;
+    position: relative;
+    z-index: 2;
+}
+
+.cierre-marca {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255,255,255,.35);
+    position: relative;
+    z-index: 2;
+}
+
+.cierre-marca strong {
+    display: block;
+    font-size: 13px;
+}
+
+.cierre-marca span {
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: .85;
+}
+
+@media (min-width: 700px) {
+    .hero {
+        min-height: 390px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .acciones {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 </style>
 </head>
@@ -162,77 +382,204 @@ footer {
 <body>
 
 <header>
-    <div class="ugt">UGT</div>
-    <h1>EL CORTE INGLÉS</h1>
-    <p>Andalucía Occidental · Extremadura</p>
+    <div class="cabecera">
+
+        <img
+            class="logo-ugt"
+            src="logo.png"
+            alt="UGT FeSMC"
+        >
+
+        <div class="marca-texto">
+            <strong>EL CORTE INGLÉS</strong>
+            <span class="fesmc">FeSMC</span>
+            <span class="territorio">
+                Andalucía Occidental · Extremadura
+            </span>
+        </div>
+
+    </div>
 </header>
+
+
+<section class="hero">
+
+    <div class="hero-contenido">
+
+        <div class="etiqueta-centro">
+            TU CENTRO
+        </div>
+
+        <h1>SAN JUAN</h1>
+
+        <h2>Tu UGT en el centro.</h2>
+
+        <p>
+            Información, apoyo y contacto directo
+            para los compañeros y compañeras de San Juan.
+        </p>
+
+    </div>
+
+</section>
+
 
 <main>
 
-<div class="centro">
-    <h2>SAN JUAN</h2>
-    <p>UGT El Corte Inglés</p>
-</div>
+<!-- CONTACTO -->
 
-<div class="titulo">
+<div class="titulo-seccion">
     <h3>Estamos contigo</h3>
-    <p>Información, contacto y redes sociales</p>
-</div>
-
-<div class="redes">
-
-<a class="boton"
-href="https://whatsapp.com/channel/0029VaOdq0GAO7RDEPAu0m0s"
-target="_blank">
-WhatsApp
-</a>
-
-<a class="boton"
-href="https://www.instagram.com/ugt.elcorteingles/"
-target="_blank">
-Instagram
-</a>
-
-<a class="boton"
-href="https://www.tiktok.com/@ugt_elcorteingles"
-target="_blank">
-TikTok
-</a>
-
-<a class="boton"
-href="#"
-target="_blank">
-Facebook
-</a>
-
 </div>
 
 <div class="acciones">
 
-<a class="contacto"
-href="contacto.html?centro=San%20Juan">
-<strong>CONTACTA CON UGT</strong>
-<span>¿Tienes una consulta? Hablemos.</span>
-</a>
+    <a
+        class="accion accion-contacto"
+        href="contacto.html?centro=San%20Juan"
+    >
 
-<a class="anonimo"
-href="buzon.html?centro=San%20Juan">
-<strong>BUZÓN ANÓNIMO</strong>
-<span>Cuéntanos lo que ocurre sin identificarte.</span>
-</a>
+        <div class="accion-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 13h5"></path>
+            </svg>
+        </div>
+
+        <div class="accion-texto">
+            <strong>CONTACTA CON UGT</strong>
+            <span>¿Tienes una consulta? Hablemos.</span>
+        </div>
+
+        <div class="flecha">→</div>
+
+    </a>
+
+
+    <a
+        class="accion accion-buzon"
+        href="buzon.html?centro=San%20Juan"
+    >
+
+        <div class="accion-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+            </svg>
+        </div>
+
+        <div class="accion-texto">
+            <strong>BUZÓN CONFIDENCIAL</strong>
+            <span>Cuéntanos lo que ocurre en tu centro.</span>
+        </div>
+
+        <div class="flecha">→</div>
+
+    </a>
 
 </div>
 
+
+<!-- INFORMACION DEL CENTRO -->
+
+<div class="info-centro">
+
+    <small>SAN JUAN</small>
+
+    <strong>Información de tu centro</strong>
+
+    <p>
+        Aquí encontrarás información, comunicados
+        y novedades que afectan a nuestro centro de trabajo.
+    </p>
+
+</div>
+
+
+<!-- REDES SOCIALES -->
+
+<section class="social">
+
+    <div class="titulo-seccion">
+        <h3>Síguenos</h3>
+    </div>
+
+    <p class="social-intro">
+        Mantente al día y en contacto con UGT El Corte Inglés.
+    </p>
+
+    <div class="redes">
+
+        <a
+            class="red"
+            href="https://whatsapp.com/channel/0029VaOdq0GAO7RDEPAu0m0s"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="red-icono">W</div>
+            WhatsApp
+        </a>
+
+        <a
+            class="red"
+            href="https://www.instagram.com/ugt.elcorteingles/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="red-icono">IG</div>
+            Instagram
+        </a>
+
+        <a
+            class="red"
+            href="https://www.tiktok.com/@ugt_elcorteingles"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="red-icono">TT</div>
+            TikTok
+        </a>
+
+        <a
+            class="red"
+            href="https://www.facebook.com/share/1GvNqU2Am7/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="red-icono">F</div>
+            Facebook
+        </a>
+
+    </div>
+
+</section>
+
+
 <a class="volver" href="index.html">
-← Volver a los centros
+    ← Volver a los centros
 </a>
 
-</main>
 
-<footer>
-UGT El Corte Inglés<br>
-Andalucía Occidental · Extremadura
-</footer>
+<!-- CIERRE -->
+
+<section class="cierre-rojo">
+
+    <div class="cierre-linea"></div>
+
+    <h2>
+        HAY OTRA FORMA<br>
+        DE HACER LAS COSAS.
+    </h2>
+
+    <div class="cierre-marca">
+        <strong>UGT El Corte Inglés · FeSMC</strong>
+        <span>Andalucía Occidental · Extremadura</span>
+    </div>
+
+</section>
+
+</main>
 
 </body>
 </html>
