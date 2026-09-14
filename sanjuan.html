@@ -66,7 +66,31 @@ header {
     line-height: 1.2;
 }
 
-/* HERO SAN JUAN */
+/* NAVEGACIÓN */
+.navegacion {
+    max-width: 680px;
+    margin: auto;
+    background: #ffffff;
+    padding: 9px 18px 10px;
+}
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.volver span {
+    color: #e30613;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* HERO */
 .hero {
     min-height: 320px;
     position: relative;
@@ -117,14 +141,14 @@ header {
     color: #e6e6e6;
     font-size: 14px;
     line-height: 1.4;
-    max-width: 420px;
+    max-width: 430px;
 }
 
 /* CONTENIDO */
 main {
     max-width: 680px;
     margin: auto;
-    padding: 24px 16px 0;
+    padding: 27px 16px 0;
 }
 
 /* TITULOS */
@@ -132,7 +156,7 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 7px 0 16px;
+    margin: 7px 0 17px;
 }
 
 .titulo-seccion::before {
@@ -141,6 +165,7 @@ main {
     height: 5px;
     background: #e30613;
     border-radius: 10px;
+    flex: 0 0 30px;
 }
 
 .titulo-seccion h3 {
@@ -213,51 +238,21 @@ main {
 .flecha {
     position: absolute;
     right: 18px;
-    font-size: 24px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-/* INFORMACION CENTRO */
-.info-centro {
-    margin-top: 27px;
-    background: white;
-    border-radius: 16px;
-    padding: 21px 19px;
-    box-shadow: 0 3px 13px rgba(0,0,0,.07);
-}
-
-.info-centro small {
-    display: block;
-    color: #e30613;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: .6px;
-    margin-bottom: 5px;
-}
-
-.info-centro strong {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.info-centro p {
-    margin: 0;
-    color: #666;
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: 24px;
 }
 
 /* REDES */
 .social {
-    margin-top: 30px;
+    margin-top: 31px;
 }
 
 .social-intro {
     color: #666;
     font-size: 13px;
     margin: -8px 0 15px;
+    line-height: 1.4;
 }
 
 .redes {
@@ -269,43 +264,55 @@ main {
 .red {
     background: #ffffff;
     color: #202020;
-    min-height: 63px;
+    min-height: 68px;
     border-radius: 13px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 14px;
+    padding: 13px;
     font-size: 14px;
     font-weight: 800;
     box-shadow: 0 2px 9px rgba(0,0,0,.07);
 }
 
 .red-icono {
-    width: 29px;
-    height: 29px;
-    background: #f2f2f2;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    background: #f3f3f3;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 9px;
-    font-size: 12px;
-    font-weight: 900;
-    color: #e30613;
+    margin-right: 10px;
 }
 
-/* VOLVER */
-.volver {
-    display: inline-block;
-    margin: 29px 0;
-    color: #666;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
+.red-icono svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* COLORES REDES */
+.whatsapp svg {
+    fill: #25D366;
+}
+
+.instagram svg {
+    fill: #E1306C;
+}
+
+.tiktok svg {
+    fill: #111111;
+}
+
+.facebook svg {
+    fill: #1877F2;
 }
 
 /* CIERRE */
 .cierre-rojo {
+    margin-top: 34px;
     background: #e30613;
     color: #ffffff;
     padding: 31px 24px 29px;
@@ -401,6 +408,11 @@ main {
     </div>
 </header>
 
+<div class="navegacion">
+    <a class="volver" href="index.html">
+        <span>←</span> Centros
+    </a>
+</div>
 
 <section class="hero">
 
@@ -423,13 +435,10 @@ main {
 
 </section>
 
-
 <main>
 
-<!-- CONTACTO -->
-
 <div class="titulo-seccion">
-    <h3>Estamos contigo</h3>
+    <h3>¿En qué podemos ayudarte?</h3>
 </div>
 
 <div class="acciones">
@@ -456,7 +465,6 @@ main {
 
     </a>
 
-
     <a
         class="accion accion-buzon"
         href="buzon.html?centro=San%20Juan"
@@ -480,25 +488,6 @@ main {
 
 </div>
 
-
-<!-- INFORMACION DEL CENTRO -->
-
-<div class="info-centro">
-
-    <small>SAN JUAN</small>
-
-    <strong>Información de tu centro</strong>
-
-    <p>
-        Aquí encontrarás información, comunicados
-        y novedades que afectan a nuestro centro de trabajo.
-    </p>
-
-</div>
-
-
-<!-- REDES SOCIALES -->
-
 <section class="social">
 
     <div class="titulo-seccion">
@@ -517,7 +506,11 @@ main {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <div class="red-icono">W</div>
+            <div class="red-icono whatsapp">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2a9.5 9.5 0 0 0-8.1 14.5L2.5 21.5l5.1-1.3A9.5 9.5 0 1 0 12 2zm0 17.2a7.6 7.6 0 0 1-3.9-1.1l-.3-.2-3 .8.8-2.9-.2-.3A7.7 7.7 0 1 1 12 19.2zm4.2-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.9c-.2.2-.3.2-.6.1a6.3 6.3 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.5-.6.2-.4c.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.3-.2-.6-.3z"/>
+                </svg>
+            </div>
             WhatsApp
         </a>
 
@@ -527,7 +520,11 @@ main {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <div class="red-icono">IG</div>
+            <div class="red-icono instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.7-3.2a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
+                </svg>
+            </div>
             Instagram
         </a>
 
@@ -537,7 +534,11 @@ main {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <div class="red-icono">TT</div>
+            <div class="red-icono tiktok">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14.5 2h3a5.8 5.8 0 0 0 4.5 4.5v3a8.6 8.6 0 0 1-4.5-1.3v7.1a6.3 6.3 0 1 1-5.4-6.2v3.2a3.2 3.2 0 1 0 2.4 3.1V2z"/>
+                </svg>
+            </div>
             TikTok
         </a>
 
@@ -547,21 +548,17 @@ main {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <div class="red-icono">F</div>
+            <div class="red-icono facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.8 22v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V14h2.8v8h3.5z"/>
+                </svg>
+            </div>
             Facebook
         </a>
 
     </div>
 
 </section>
-
-
-<a class="volver" href="index.html">
-    ← Volver a los centros
-</a>
-
-
-<!-- CIERRE -->
 
 <section class="cierre-rojo">
 
