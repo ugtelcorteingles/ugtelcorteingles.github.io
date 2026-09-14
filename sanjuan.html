@@ -66,30 +66,6 @@ header {
     line-height: 1.2;
 }
 
-/* NAVEGACIÓN */
-.navegacion {
-    max-width: 680px;
-    margin: auto;
-    background: #ffffff;
-    padding: 9px 18px 10px;
-}
-
-.volver {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #555;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.volver span {
-    color: #e30613;
-    font-size: 18px;
-    line-height: 1;
-}
-
 /* HERO */
 .hero {
     min-height: 320px;
@@ -104,11 +80,41 @@ header {
     align-items: flex-end;
 }
 
+/* BOTÓN VOLVER */
+.volver {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 10;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(255,255,255,.92);
+    color: #202020;
+
+    padding: 9px 13px;
+    border-radius: 20px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+}
+
+.volver span {
+    color: #e30613;
+    font-size: 18px;
+    line-height: 1;
+}
+
 .hero-contenido {
     width: 100%;
     max-width: 680px;
     margin: auto;
-    padding: 45px 22px 45px;
+    padding: 70px 22px 45px;
 }
 
 .etiqueta-centro {
@@ -151,7 +157,7 @@ main {
     padding: 27px 16px 0;
 }
 
-/* TITULOS */
+/* TÍTULOS */
 .titulo-seccion {
     display: flex;
     align-items: center;
@@ -243,7 +249,7 @@ main {
     font-size: 24px;
 }
 
-/* REDES */
+/* REDES SOCIALES */
 .social {
     margin-top: 31px;
 }
@@ -408,13 +414,11 @@ main {
     </div>
 </header>
 
-<div class="navegacion">
+<section class="hero">
+
     <a class="volver" href="index.html">
         <span>←</span> Centros
     </a>
-</div>
-
-<section class="hero">
 
     <div class="hero-contenido">
 
