@@ -8,20 +8,15 @@
 <title>Buzón confidencial | UGT El Corte Inglés</title>
 
 <style>
-
 * {
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f4f4;
-    color: #202020;
+    color: #222;
 }
 
 /* CABECERA */
@@ -73,110 +68,83 @@ header {
     line-height: 1.2;
 }
 
+/* HERO */
 
-/* FALDÓN BUZÓN */
-
-.presentacion {
+.hero {
+    background: #202020;
+    color: white;
     position: relative;
     overflow: hidden;
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            120deg,
-            #252525 0%,
-            #1c1c1c 60%,
-            #111111 100%
-        );
 }
 
-.presentacion-contenido {
-    position: relative;
-    z-index: 2;
+.hero-contenido {
     max-width: 680px;
     margin: auto;
-    padding: 18px 20px 29px;
+    padding: 22px 20px 31px;
+    position: relative;
+    z-index: 2;
 }
 
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #ffffff;
+    color: #222;
+    padding: 9px 14px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
 
-/* ESCUDO DE FONDO */
+.volver span {
+    color: #e30613;
+    font-size: 18px;
+}
+
+.linea-roja {
+    width: 40px;
+    height: 5px;
+    background: #e30613;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 31px;
+    line-height: 1.05;
+    font-weight: 900;
+}
+
+.hero p {
+    margin: 13px 0 0;
+    max-width: 560px;
+    color: #e4e4e4;
+    font-size: 14px;
+    line-height: 1.45;
+}
 
 .escudo-fondo {
     position: absolute;
-    width: 205px;
-    height: 205px;
-    right: -48px;
-    top: 25px;
+    right: -25px;
+    bottom: -45px;
+    width: 175px;
+    height: 175px;
     opacity: .07;
-    z-index: 1;
 }
 
 .escudo-fondo svg {
     width: 100%;
     height: 100%;
     fill: none;
-    stroke: #ffffff;
-    stroke-width: 1.5;
+    stroke: white;
+    stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-
-
-/* VOLVER */
-
-.volver {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-
-    background: rgba(255,255,255,.94);
-    color: #202020;
-
-    padding: 8px 13px;
-    border-radius: 20px;
-
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 800;
-
-    margin-bottom: 25px;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.18);
-}
-
-.volver span {
-    color: #e30613;
-    font-size: 18px;
-    line-height: 1;
-}
-
-
-/* TÍTULO */
-
-.linea-roja {
-    width: 42px;
-    height: 5px;
-    background: #e30613;
-    border-radius: 10px;
-    margin-bottom: 14px;
-}
-
-.presentacion h1 {
-    margin: 0;
-    font-size: 31px;
-    line-height: 1.05;
-    font-weight: 900;
-    letter-spacing: -.3px;
-}
-
-.presentacion p {
-    margin: 10px 0 0;
-    max-width: 490px;
-    color: rgba(255,255,255,.88);
-    font-size: 14px;
-    line-height: 1.45;
-}
-
 
 /* CONTENIDO */
 
@@ -186,26 +154,23 @@ main {
     padding: 22px 16px 0;
 }
 
-
-/* MENSAJE DE CONFIANZA */
+/* AVISO */
 
 .aviso {
+    background: white;
+    border-radius: 16px;
+    padding: 19px;
     display: flex;
+    gap: 14px;
     align-items: flex-start;
-    gap: 12px;
-
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 17px 18px;
-    margin-bottom: 14px;
-
-    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    margin-bottom: 16px;
 }
 
 .aviso-icono {
-    width: 27px;
-    height: 27px;
-    flex: 0 0 27px;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
     color: #e30613;
 }
 
@@ -214,58 +179,59 @@ main {
     height: 100%;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 .aviso strong {
     display: block;
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .aviso p {
     margin: 0;
     color: #666;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.45;
 }
 
-
 /* FORMULARIO */
 
-.formulario {
-    background: #ffffff;
-    padding: 21px 18px 22px;
+form {
+    background: white;
+    padding: 22px 18px;
     border-radius: 17px;
-    box-shadow: 0 3px 14px rgba(0,0,0,.08);
+    box-shadow: 0 3px 14px rgba(0,0,0,.06);
 }
 
-.formulario-titulo {
+.titulo-formulario {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
+    gap: 11px;
+    margin-bottom: 18px;
 }
 
-.formulario-titulo::before {
+.titulo-formulario::before {
     content: "";
-    width: 27px;
+    width: 30px;
     height: 5px;
     background: #e30613;
     border-radius: 10px;
+    flex: 0 0 30px;
 }
 
-.formulario-titulo strong {
-    font-size: 18px;
+.titulo-formulario h2 {
+    margin: 0;
+    font-size: 21px;
 }
 
 label {
     display: block;
-    font-size: 13px;
     font-weight: 800;
     margin: 17px 0 7px;
+    font-size: 14px;
 }
 
 .opcional {
@@ -274,37 +240,33 @@ label {
 }
 
 select,
-input,
+input[type="text"],
 textarea {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d7d7d7;
+    padding: 14px;
+    border: 1px solid #d1d1d1;
     border-radius: 10px;
-    background: #fafafa;
-    color: #202020;
     font-family: inherit;
     font-size: 16px;
-    outline: none;
+    background: #fff;
 }
 
 select:focus,
 input:focus,
 textarea:focus {
+    outline: none;
     border-color: #e30613;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(227,6,19,.08);
 }
 
 textarea {
-    min-height: 165px;
+    min-height: 135px;
     resize: vertical;
 }
 
+/* OPCIONES DE CONTACTO */
 
-/* ELECCIÓN DE CONTACTO */
-
-.contacto-opcional {
-    margin-top: 4px;
+.contacto-opcional > label {
+    margin-top: 22px;
 }
 
 .opciones-contacto {
@@ -318,17 +280,17 @@ textarea {
     display: flex;
     align-items: center;
     gap: 12px;
-
-    padding: 14px 15px;
-
+    padding: 14px 16px;
     border: 2px solid #e5e5e5;
     border-radius: 12px;
-
-    background: #ffffff;
+    background: #fff;
     cursor: pointer;
-
     transition: .2s ease;
     margin: 0;
+}
+
+.opcion-contacto:hover {
+    border-color: #e30613;
 }
 
 .opcion-contacto:has(input:checked) {
@@ -337,12 +299,10 @@ textarea {
 }
 
 .opcion-contacto input {
+    accent-color: #e30613;
     width: 18px;
     height: 18px;
     flex: 0 0 18px;
-    margin: 0;
-    padding: 0;
-    accent-color: #e30613;
 }
 
 .opcion-contacto span {
@@ -351,97 +311,84 @@ textarea {
 }
 
 .opcion-contacto strong {
-    font-size: 14px;
+    font-size: 15px;
     color: #222;
 }
 
 .opcion-contacto small {
     margin-top: 3px;
-    color: #666;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
-    line-height: 1.3;
+    color: #666;
 }
-
-
-/* DATOS CONTACTO */
-
-#datosContacto {
-    background: #f7f7f7;
-    padding: 2px 14px 15px;
-    border-radius: 12px;
-    margin-top: 12px;
-}
-
 
 /* ARCHIVOS */
 
 .archivo {
     background: #f5f5f5;
-    padding: 15px;
+    padding: 16px;
     border-radius: 12px;
-    margin-top: 19px;
+    margin-top: 20px;
 }
 
 .archivo label {
     margin-top: 0;
 }
 
-.archivo input {
-    background: #ffffff;
+.archivo input[type="file"] {
+    width: 100%;
+    background: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
 }
 
 .archivo p {
-    margin: 8px 0 0;
+    font-size: 12px;
     color: #777;
-    font-size: 11px;
-    line-height: 1.4;
+    margin: 10px 0 0;
 }
-
 
 /* BOTÓN */
 
 button {
     width: 100%;
     border: 0;
-
     background: #e30613;
-    color: #ffffff;
-
-    padding: 16px;
+    color: white;
+    padding: 17px;
     margin-top: 22px;
-
     border-radius: 11px;
-
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 900;
-
     cursor: pointer;
 }
 
+button:hover {
+    background: #c9000d;
+}
 
 /* PRIVACIDAD */
 
 .privacidad {
     display: flex;
-    gap: 9px;
     align-items: flex-start;
-
-    margin: 14px 2px 0;
-
+    gap: 11px;
+    font-size: 12px;
     color: #777;
-    font-size: 11px;
     line-height: 1.45;
+    margin: 16px 5px 0;
 }
 
-.privacidad-icono {
+.candado {
     width: 17px;
     height: 17px;
     flex: 0 0 17px;
     margin-top: 1px;
 }
 
-.privacidad-icono svg {
+.candado svg {
     width: 100%;
     height: 100%;
     fill: none;
@@ -451,14 +398,13 @@ button {
     stroke-linejoin: round;
 }
 
-
 /* CIERRE */
 
 .cierre-rojo {
-    margin-top: 27px;
+    margin-top: 28px;
     background: #e30613;
     color: #ffffff;
-    padding: 28px 22px 26px;
+    padding: 31px 24px 29px;
     border-radius: 18px 18px 0 0;
     position: relative;
     overflow: hidden;
@@ -467,9 +413,9 @@ button {
 .cierre-rojo::after {
     content: "";
     position: absolute;
-    width: 140px;
-    height: 140px;
-    border: 26px solid rgba(255,255,255,.07);
+    width: 150px;
+    height: 150px;
+    border: 28px solid rgba(255,255,255,.07);
     border-radius: 50%;
     right: -70px;
     top: -65px;
@@ -478,23 +424,24 @@ button {
 .cierre-linea {
     width: 42px;
     height: 5px;
-    background: #ffffff;
+    background: white;
     border-radius: 10px;
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 .cierre-rojo h2 {
     margin: 0;
-    font-size: 27px;
-    line-height: 1.03;
+    font-size: 29px;
+    line-height: 1.02;
     font-weight: 900;
+    letter-spacing: -.5px;
     position: relative;
     z-index: 2;
 }
 
 .cierre-marca {
-    margin-top: 22px;
-    padding-top: 16px;
+    margin-top: 25px;
+    padding-top: 17px;
     border-top: 1px solid rgba(255,255,255,.35);
     position: relative;
     z-index: 2;
@@ -507,33 +454,22 @@ button {
 
 .cierre-marca span {
     display: block;
-    margin-top: 5px;
     font-size: 11px;
+    margin-top: 5px;
     opacity: .85;
 }
 
-
 @media (min-width: 700px) {
-
-    .presentacion h1 {
-        font-size: 36px;
+    .hero h1 {
+        font-size: 39px;
     }
-
-    main {
-        padding-top: 28px;
-    }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
 <header>
-
     <div class="cabecera">
 
         <img
@@ -543,202 +479,89 @@ button {
         >
 
         <div class="marca-texto">
-
             <strong>EL CORTE INGLÉS</strong>
-
-            <span class="fesmc">
-                FeSMC
-            </span>
-
+            <span class="fesmc">FeSMC</span>
             <span class="territorio">
                 Andalucía Occidental · Extremadura
             </span>
-
         </div>
 
     </div>
-
 </header>
 
+<section class="hero">
 
-<section class="presentacion">
+    <div class="hero-contenido">
 
-
-    <div class="escudo-fondo">
-
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-
-            <path
-                d="M50 8
-                   L82 20
-                   V45
-                   C82 67 69 83 50 93
-                   C31 83 18 67 18 45
-                   V20
-                   Z">
-            </path>
-
-            <path d="M35 49 L45 59 L66 37"></path>
-
-        </svg>
-
-    </div>
-
-
-    <div class="presentacion-contenido">
-
-
-        <a
-            class="volver"
-            id="volverCentro"
-            href="index.html"
-        >
-
-            <span>←</span>
-            Volver
-
+        <a class="volver" href="sanjuan.html">
+            <span>←</span> San Juan
         </a>
-
 
         <div class="linea-roja"></div>
 
-
-        <h1>
-            BUZÓN CONFIDENCIAL
-        </h1>
-
+        <h1>BUZÓN CONFIDENCIAL</h1>
 
         <p>
             Cuéntanos lo que ocurre en tu centro.
-            Puedes enviarnos la información sin indicar
-            tus datos personales.
+            Puedes enviarnos la información sin indicar tus datos personales.
         </p>
 
+    </div>
 
+    <div class="escudo-fondo">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+        </svg>
     </div>
 
 </section>
 
-
 <main>
 
-
-<div class="aviso">
+<section class="aviso">
 
     <div class="aviso-icono">
-
         <svg viewBox="0 0 24 24" aria-hidden="true">
-
-            <path
-                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z">
-            </path>
-
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
             <path d="M9 12l2 2 4-4"></path>
-
         </svg>
-
     </div>
-
 
     <div>
-
-        <strong>
-            Tu información puede ayudarnos.
-        </strong>
-
+        <strong>Tu información puede ayudarnos.</strong>
         <p>
             Explícanos la situación con el mayor detalle posible.
-            Puedes adjuntar fotografías, capturas o documentación
-            si lo necesitas.
+            Puedes adjuntar fotografías, capturas o documentación si lo necesitas.
         </p>
-
     </div>
 
-</div>
+</section>
 
+<form id="buzonForm" enctype="multipart/form-data">
 
-
-<form
-    id="buzonForm"
-    class="formulario"
-    enctype="multipart/form-data"
->
-
-
-    <div class="formulario-titulo">
-
-        <strong>
-            Cuéntanos qué ocurre
-        </strong>
-
+    <div class="titulo-formulario">
+        <h2>Cuéntanos qué ocurre</h2>
     </div>
 
+    <label for="centro">Centro de trabajo</label>
 
-    <label for="centro">
-        Centro de trabajo
-    </label>
-
-
-    <select
-        id="centro"
-        name="centro"
-        required
-    >
-
-        <option value="">
-            Selecciona tu centro
-        </option>
-
-        <option value="San Juan">
-            San Juan
-        </option>
-
-        <option value="Plaza del Duque">
-            Plaza del Duque
-        </option>
-
-        <option value="Nervión">
-            Nervión
-        </option>
-
-        <option value="Sevilla Este">
-            Sevilla Este
-        </option>
-
-        <option value="Costa de la Luz">
-            Costa de la Luz
-        </option>
-
-        <option value="Ronda de los Tejares">
-            Ronda de los Tejares
-        </option>
-
-        <option value="Ronda de Córdoba">
-            Ronda de Córdoba
-        </option>
-
-        <option value="Conquistadores">
-            Conquistadores
-        </option>
-
-        <option value="Avenida Juan Carlos I">
-            Avenida Juan Carlos I
-        </option>
-
+    <select id="centro" name="centro" required>
+        <option value="">Selecciona tu centro</option>
+        <option value="San Juan">San Juan</option>
+        <option value="Plaza del Duque">Plaza del Duque</option>
+        <option value="Nervión">Nervión</option>
+        <option value="Sevilla Este">Sevilla Este</option>
+        <option value="Costa de la Luz">Costa de la Luz</option>
+        <option value="Ronda de los Tejares">Ronda de los Tejares</option>
+        <option value="Ronda de Córdoba">Ronda de Córdoba</option>
+        <option value="Conquistadores">Conquistadores</option>
+        <option value="Avenida Juan Carlos I">Avenida Juan Carlos I</option>
     </select>
 
-
-
     <label for="departamento">
-
-        Departamento
-
-        <span class="opcional">
-            (opcional)
-        </span>
-
+        Departamento <span class="opcional">(opcional)</span>
     </label>
-
 
     <input
         type="text"
@@ -747,98 +570,52 @@ button {
         placeholder="Ej.: Deportes, Cajas, Perfumería..."
     >
 
-
-
-    <label for="mensaje">
-        ¿Qué quieres contarnos?
-    </label>
-
+    <label for="mensaje">¿Qué quieres contarnos?</label>
 
     <textarea
         id="mensaje"
         name="mensaje"
         placeholder="Describe aquí lo ocurrido..."
-        required
-    ></textarea>
-
-
+        required></textarea>
 
     <div class="contacto-opcional">
 
-
-        <label>
-            ¿Quieres que UGT se ponga en contacto contigo?
-        </label>
-
+        <label>¿Quieres que UGT se ponga en contacto contigo?</label>
 
         <div class="opciones-contacto">
 
-
             <label class="opcion-contacto">
-
                 <input
                     type="radio"
                     name="quiereContacto"
                     value="no"
                     checked
                 >
-
                 <span>
-
-                    <strong>
-                        No quiero que contactéis conmigo
-                    </strong>
-
-                    <small>
-                        No es necesario indicar mis datos personales
-                    </small>
-
+                    <strong>Enviar sin datos de contacto</strong>
+                    <small>No necesito que UGT contacte conmigo</small>
                 </span>
-
             </label>
 
-
-
             <label class="opcion-contacto">
-
                 <input
                     type="radio"
                     name="quiereContacto"
                     value="si"
                 >
-
                 <span>
-
-                    <strong>
-                        Sí, quiero que contactéis conmigo
-                    </strong>
-
-                    <small>
-                        Podré indicar cómo puede localizarme UGT
-                    </small>
-
+                    <strong>Sí, quiero que contactéis conmigo</strong>
+                    <small>Podré indicar cómo puede localizarme UGT</small>
                 </span>
-
             </label>
-
 
         </div>
 
-
-
-        <div
-            id="datosContacto"
-            style="display:none;"
-        >
-
+        <div id="datosContacto" style="display:none;">
 
             <label for="nombre">
-                Nombre
-                <span class="opcional">
-                    (opcional)
-                </span>
+                Nombre <span class="opcional">(opcional)</span>
             </label>
-
 
             <input
                 type="text"
@@ -847,11 +624,9 @@ button {
                 placeholder="Tu nombre"
             >
 
-
             <label for="contacto">
                 Teléfono / WhatsApp o email
             </label>
-
 
             <input
                 type="text"
@@ -860,27 +635,15 @@ button {
                 placeholder="Indícanos cómo podemos contactar contigo"
             >
 
-
         </div>
-
 
     </div>
 
-
-
     <div class="archivo">
 
-
         <label for="archivos">
-
-            Adjuntar archivos
-
-            <span class="opcional">
-                (opcional)
-            </span>
-
+            Adjuntar archivos <span class="opcional">(opcional)</span>
         </label>
-
 
         <input
             type="file"
@@ -890,223 +653,123 @@ button {
             accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
         >
 
-
         <p>
-            Puedes seleccionar fotografías,
-            capturas o documentos.
+            Puedes seleccionar fotografías, capturas o documentos.
         </p>
 
-
     </div>
-
-
 
     <button type="submit">
         ENVIAR INFORMACIÓN
     </button>
 
-
-
     <div class="privacidad">
 
-
-        <div class="privacidad-icono">
-
+        <div class="candado">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <rect
-                    x="5"
-                    y="10"
-                    width="14"
-                    height="11"
-                    rx="2">
-                </rect>
-
-                <path
-                    d="M8 10V7a4 4 0 0 1 8 0v3">
-                </path>
-
+                <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
             </svg>
-
         </div>
 
-
         <span>
-            Si solicitas que contactemos contigo,
-            tus datos se utilizarán únicamente
-            para atender esta comunicación.
+            Si solicitas que contactemos contigo, tus datos se utilizarán
+            únicamente para atender esta comunicación.
         </span>
 
-
     </div>
-
 
 </form>
 
-
-
 <section class="cierre-rojo">
-
 
     <div class="cierre-linea"></div>
 
-
     <h2>
-
         HAY OTRA FORMA<br>
         DE HACER LAS COSAS.
-
     </h2>
 
-
     <div class="cierre-marca">
-
-        <strong>
-            UGT El Corte Inglés · FeSMC
-        </strong>
-
-        <span>
-            Andalucía Occidental · Extremadura
-        </span>
-
+        <strong>UGT El Corte Inglés · FeSMC</strong>
+        <span>Andalucía Occidental · Extremadura</span>
     </div>
-
 
 </section>
 
-
 </main>
 
-
-
 <script>
-
 
 /* OPCIÓN DE CONTACTO */
 
 const opcionesContacto =
-    document.querySelectorAll(
-        'input[name="quiereContacto"]'
-    );
+    document.querySelectorAll('input[name="quiereContacto"]');
 
 const datosContacto =
-    document.getElementById(
-        'datosContacto'
-    );
+    document.getElementById('datosContacto');
 
 const campoContacto =
-    document.getElementById(
-        'contacto'
-    );
-
+    document.getElementById('contacto');
 
 opcionesContacto.forEach(opcion => {
 
-    opcion.addEventListener(
-        'change',
-        function() {
+    opcion.addEventListener('change', function() {
 
-            if (this.value === 'si') {
+        if (this.value === 'si') {
 
-                datosContacto.style.display =
-                    'block';
+            datosContacto.style.display = 'block';
+            campoContacto.required = true;
 
-                campoContacto.required =
-                    true;
+        } else {
 
-            } else {
-
-                datosContacto.style.display =
-                    'none';
-
-                campoContacto.required =
-                    false;
-
-                campoContacto.value =
-                    '';
-
-                document
-                    .getElementById('nombre')
-                    .value = '';
-
-            }
+            datosContacto.style.display = 'none';
+            campoContacto.required = false;
+            campoContacto.value = '';
+            document.getElementById('nombre').value = '';
 
         }
-    );
+
+    });
 
 });
 
 
-
-/* CENTRO DESDE LA PÁGINA ANTERIOR */
+/* CENTRO AUTOMÁTICO */
 
 const parametros =
-    new URLSearchParams(
-        window.location.search
-    );
+    new URLSearchParams(window.location.search);
 
 const centro =
     parametros.get("centro");
 
-
 if (centro) {
 
     const selector =
-        document.querySelector(
-            'select[name="centro"]'
-        );
+        document.querySelector('select[name="centro"]');
 
     if (selector) {
-
-        selector.value =
-            centro;
-
+        selector.value = centro;
     }
 
 }
 
 
-
-/* VOLVER AL CENTRO CORRECTO */
-
-const volver =
-    document.getElementById(
-        "volverCentro"
-    );
-
-
-if (centro === "San Juan") {
-
-    volver.href =
-        "sanjuan.html";
-
-    volver.innerHTML =
-        "<span>←</span> San Juan";
-
-}
-
-
-
-/* BLOQUEO TEMPORAL DEL ENVÍO */
+/* ENVÍO TODAVÍA DESACTIVADO */
 
 document
-    .getElementById("buzonForm")
-    .addEventListener(
-        "submit",
-        function(e) {
+.getElementById("buzonForm")
+.addEventListener("submit", function(e) {
 
-            e.preventDefault();
+    e.preventDefault();
 
-            alert(
-                "El buzón está preparado. La recepción segura de información se activará próximamente."
-            );
-
-        }
+    alert(
+        "El buzón está preparado. Falta conectar el sistema seguro de recepción antes de activar los envíos."
     );
 
+});
 
 </script>
-
 
 </body>
 </html>
