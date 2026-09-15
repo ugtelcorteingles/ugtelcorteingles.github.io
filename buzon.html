@@ -263,7 +263,7 @@ textarea {
     resize: vertical;
 }
 
-/* OPCIONES DE CONTACTO */
+/* OPCIONES CONTACTO */
 
 .contacto-opcional > label {
     margin-top: 22px;
@@ -322,35 +322,111 @@ textarea {
     color: #666;
 }
 
-/* ARCHIVOS */
+/* ADJUNTAR ARCHIVOS */
 
 .archivo {
     background: #f5f5f5;
     padding: 16px;
-    border-radius: 12px;
+    border-radius: 13px;
     margin-top: 20px;
 }
 
-.archivo label {
-    margin-top: 0;
-}
-
-.archivo input[type="file"] {
-    width: 100%;
-    background: white;
-    border: 1px solid #d1d1d1;
-    border-radius: 10px;
-    padding: 12px;
+.archivo-titulo {
+    display: block;
     font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
-.archivo p {
-    font-size: 12px;
+.archivo-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.boton-archivo {
+    width: 100%;
+    min-height: 64px;
+    background: #ffffff;
+    border: 2px dashed #d3d3d3;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 13px 15px;
+    cursor: pointer;
+    margin: 0;
+    transition: .2s ease;
+}
+
+.boton-archivo:hover {
+    border-color: #e30613;
+    background: #fffafa;
+}
+
+.icono-archivo {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-radius: 50%;
+    background: #fff0f1;
+    color: #e30613;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.icono-archivo svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.texto-archivo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.texto-archivo strong {
+    font-size: 15px;
+    color: #222;
+}
+
+.texto-archivo small {
+    margin-top: 3px;
     color: #777;
-    margin: 10px 0 0;
+    font-size: 11px;
+    font-weight: normal;
 }
 
-/* BOTÓN */
+.archivos-seleccionados {
+    display: none;
+    margin: 11px 2px 0;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.archivos-seleccionados.activo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.archivos-seleccionados .check {
+    color: #e30613;
+    font-weight: 900;
+}
+
+/* BOTÓN ENVÍO */
 
 button {
     width: 100%;
@@ -464,6 +540,7 @@ button:hover {
         font-size: 39px;
     }
 }
+
 </style>
 </head>
 
@@ -509,7 +586,7 @@ button:hover {
     </div>
 
     <div class="escudo-fondo">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
             <path d="M9 12l2 2 4-4"></path>
         </svg>
@@ -522,7 +599,7 @@ button:hover {
 <section class="aviso">
 
     <div class="aviso-icono">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
             <path d="M9 12l2 2 4-4"></path>
         </svg>
@@ -540,144 +617,175 @@ button:hover {
 
 <form id="buzonForm" enctype="multipart/form-data">
 
-    <div class="titulo-formulario">
-        <h2>Cuéntanos qué ocurre</h2>
-    </div>
+<div class="titulo-formulario">
+    <h2>Cuéntanos qué ocurre</h2>
+</div>
 
-    <label for="centro">Centro de trabajo</label>
+<label for="centro">Centro de trabajo</label>
 
-    <select id="centro" name="centro" required>
-        <option value="">Selecciona tu centro</option>
-        <option value="San Juan">San Juan</option>
-        <option value="Plaza del Duque">Plaza del Duque</option>
-        <option value="Nervión">Nervión</option>
-        <option value="Sevilla Este">Sevilla Este</option>
-        <option value="Costa de la Luz">Costa de la Luz</option>
-        <option value="Ronda de los Tejares">Ronda de los Tejares</option>
-        <option value="Ronda de Córdoba">Ronda de Córdoba</option>
-        <option value="Conquistadores">Conquistadores</option>
-        <option value="Avenida Juan Carlos I">Avenida Juan Carlos I</option>
-    </select>
+<select id="centro" name="centro" required>
+    <option value="">Selecciona tu centro</option>
+    <option value="San Juan">San Juan</option>
+    <option value="Plaza del Duque">Plaza del Duque</option>
+    <option value="Nervión">Nervión</option>
+    <option value="Sevilla Este">Sevilla Este</option>
+    <option value="Costa de la Luz">Costa de la Luz</option>
+    <option value="Ronda de los Tejares">Ronda de los Tejares</option>
+    <option value="Ronda de Córdoba">Ronda de Córdoba</option>
+    <option value="Conquistadores">Conquistadores</option>
+    <option value="Avenida Juan Carlos I">Avenida Juan Carlos I</option>
+</select>
 
-    <label for="departamento">
-        Departamento <span class="opcional">(opcional)</span>
-    </label>
+<label for="departamento">
+    Departamento <span class="opcional">(opcional)</span>
+</label>
 
-    <input
-        type="text"
-        id="departamento"
-        name="departamento"
-        placeholder="Ej.: Deportes, Cajas, Perfumería..."
-    >
+<input
+    type="text"
+    id="departamento"
+    name="departamento"
+    placeholder="Ej.: Deportes, Cajas, Perfumería..."
+>
 
-    <label for="mensaje">¿Qué quieres contarnos?</label>
+<label for="mensaje">¿Qué quieres contarnos?</label>
 
-    <textarea
-        id="mensaje"
-        name="mensaje"
-        placeholder="Describe aquí lo ocurrido..."
-        required></textarea>
+<textarea
+    id="mensaje"
+    name="mensaje"
+    placeholder="Describe aquí lo ocurrido..."
+    required></textarea>
 
-    <div class="contacto-opcional">
+<div class="contacto-opcional">
 
-        <label>¿Quieres que UGT se ponga en contacto contigo?</label>
+    <label>¿Quieres que UGT se ponga en contacto contigo?</label>
 
-        <div class="opciones-contacto">
+    <div class="opciones-contacto">
 
-            <label class="opcion-contacto">
-                <input
-                    type="radio"
-                    name="quiereContacto"
-                    value="no"
-                    checked
-                >
-                <span>
-                    <strong>Enviar sin datos de contacto</strong>
-                    <small>No necesito que UGT contacte conmigo</small>
-                </span>
-            </label>
-
-            <label class="opcion-contacto">
-                <input
-                    type="radio"
-                    name="quiereContacto"
-                    value="si"
-                >
-                <span>
-                    <strong>Sí, quiero que contactéis conmigo</strong>
-                    <small>Podré indicar cómo puede localizarme UGT</small>
-                </span>
-            </label>
-
-        </div>
-
-        <div id="datosContacto" style="display:none;">
-
-            <label for="nombre">
-                Nombre <span class="opcional">(opcional)</span>
-            </label>
+        <label class="opcion-contacto">
 
             <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Tu nombre"
+                type="radio"
+                name="quiereContacto"
+                value="no"
+                checked
             >
 
-            <label for="contacto">
-                Teléfono / WhatsApp o email
-            </label>
+            <span>
+                <strong>Enviar sin datos de contacto</strong>
+                <small>No necesito que UGT contacte conmigo</small>
+            </span>
+
+        </label>
+
+        <label class="opcion-contacto">
 
             <input
-                type="text"
-                id="contacto"
-                name="contacto"
-                placeholder="Indícanos cómo podemos contactar contigo"
+                type="radio"
+                name="quiereContacto"
+                value="si"
             >
 
-        </div>
+            <span>
+                <strong>Sí, quiero que contactéis conmigo</strong>
+                <small>Podré indicar cómo puede localizarme UGT</small>
+            </span>
+
+        </label>
 
     </div>
 
-    <div class="archivo">
+    <div id="datosContacto" style="display:none;">
 
-        <label for="archivos">
-            Adjuntar archivos <span class="opcional">(opcional)</span>
+        <label for="nombre">
+            Nombre <span class="opcional">(opcional)</span>
         </label>
 
         <input
-            type="file"
-            id="archivos"
-            name="archivos"
-            multiple
-            accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
         >
 
-        <p>
-            Puedes seleccionar fotografías, capturas o documentos.
-        </p>
+        <label for="contacto">
+            Teléfono / WhatsApp o email
+        </label>
+
+        <input
+            type="text"
+            id="contacto"
+            name="contacto"
+            placeholder="Indícanos cómo podemos contactar contigo"
+        >
 
     </div>
 
-    <button type="submit">
-        ENVIAR INFORMACIÓN
-    </button>
+</div>
 
-    <div class="privacidad">
+<!-- ADJUNTAR ARCHIVOS -->
 
-        <div class="candado">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="5" y="10" width="14" height="11" rx="2"></rect>
-                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+<div class="archivo">
+
+    <span class="archivo-titulo">
+        Adjuntar archivos <span class="opcional">(opcional)</span>
+    </span>
+
+    <input
+        class="archivo-input"
+        type="file"
+        id="archivos"
+        name="archivos"
+        multiple
+        accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+    >
+
+    <label class="boton-archivo" for="archivos">
+
+        <span class="icono-archivo">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M12 5v14"></path>
+                <path d="M5 12h14"></path>
             </svg>
-        </div>
 
-        <span>
-            Si solicitas que contactemos contigo, tus datos se utilizarán
-            únicamente para atender esta comunicación.
         </span>
 
+        <span class="texto-archivo">
+            <strong>Adjuntar foto o documento</strong>
+            <small>Fotografías, capturas, PDF o documentos</small>
+        </span>
+
+    </label>
+
+    <div
+        class="archivos-seleccionados"
+        id="archivosSeleccionados"
+    >
+        <span class="check">✓</span>
+        <span id="textoArchivos"></span>
     </div>
+
+</div>
+
+<button type="submit">
+    ENVIAR INFORMACIÓN
+</button>
+
+<div class="privacidad">
+
+    <div class="candado">
+        <svg viewBox="0 0 24 24">
+            <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+        </svg>
+    </div>
+
+    <span>
+        Si solicitas que contactemos contigo, tus datos se utilizarán
+        únicamente para atender esta comunicación.
+    </span>
+
+</div>
 
 </form>
 
@@ -753,6 +861,42 @@ if (centro) {
     }
 
 }
+
+
+/* MOSTRAR ARCHIVOS SELECCIONADOS */
+
+const inputArchivos =
+    document.getElementById('archivos');
+
+const zonaArchivos =
+    document.getElementById('archivosSeleccionados');
+
+const textoArchivos =
+    document.getElementById('textoArchivos');
+
+inputArchivos.addEventListener('change', function() {
+
+    const cantidad = this.files.length;
+
+    if (cantidad === 0) {
+
+        zonaArchivos.classList.remove('activo');
+        textoArchivos.textContent = '';
+
+    } else if (cantidad === 1) {
+
+        zonaArchivos.classList.add('activo');
+        textoArchivos.textContent = '1 archivo seleccionado';
+
+    } else {
+
+        zonaArchivos.classList.add('activo');
+        textoArchivos.textContent =
+            cantidad + ' archivos seleccionados';
+
+    }
+
+});
 
 
 /* ENVÍO TODAVÍA DESACTIVADO */
