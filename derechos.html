@@ -1,1 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Conoce tus derechos | UGT El Corte Inglés</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #202020;
+}
+
+/* CABECERA */
+
+header {
+    background: #ffffff;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cabecera {
+    max-width: 680px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-ugt {
+    width: 112px;
+    height: auto;
+    display: block;
+}
+
+.marca-texto {
+    flex: 1;
+}
+
+.marca-texto strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.marca-texto .fesmc {
+    display: block;
+    color: #e30613;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.marca-texto .territorio {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+/* HERO */
+
+.hero {
+    background: #202020;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "§";
+    position: absolute;
+    right: -15px;
+    bottom: -65px;
+    font-size: 250px;
+    font-weight: bold;
+    color: rgba(255,255,255,.045);
+    line-height: 1;
+}
+
+.hero-contenido {
+    max-width: 680px;
+    margin: auto;
+    padding: 32px 22px 42px;
+    position: relative;
+    z-index: 2;
+}
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #202020;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 38px;
+}
+
+.volver span {
+    color: #e30613;
+    font-size: 20px;
+}
+
+.linea-roja {
+    width: 40px;
+    height: 5px;
+    background: #e30613;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 37px;
+    line-height: 1.02;
+    font-weight: 900;
+}
+
+.hero p {
+    margin: 15px 0 0;
+    color: #dedede;
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 500px;
+}
+
+/* CONTENIDO */
+
+main {
+    max-width: 680px;
+    margin: auto;
+    padding: 30px 16px 0;
+}
+
+/* INTRO */
+
+.intro-derechos {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 3px 14px rgba(0,0,0,.06);
+    margin-bottom: 28px;
+}
+
+.icono-derechos {
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    color: #e30613;
+}
+
+.icono-derechos svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.intro-derechos strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.intro-derechos p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* TÍTULO SECCIÓN */
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 17px;
+}
+
+.titulo-seccion::before {
+    content: "";
+    width: 30px;
+    height: 5px;
+    background: #e30613;
+    border-radius: 10px;
+}
+
+.titulo-seccion h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+/* TARJETA CONVENIO */
+
+.convenio {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+.convenio-cabecera {
+    background: #e30613;
+    color: white;
+    padding: 11px 20px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .6px;
+}
+
+.convenio-contenido {
+    padding: 25px 22px 23px;
+}
+
+.documento-icono {
+    width: 48px;
+    height: 48px;
+    background: #fff1f2;
+    color: #e30613;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.documento-icono svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.convenio h3 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.12;
+    font-weight: 900;
+}
+
+.periodo {
+    display: inline-block;
+    margin-top: 10px;
+    background: #f1f1f1;
+    color: #555;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.convenio p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 17px 0 20px;
+}
+
+.boton-convenio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #202020;
+    color: white;
+    text-decoration: none;
+    padding: 17px 18px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.boton-convenio span {
+    font-size: 22px;
+}
+
+/* PRÓXIMAMENTE */
+
+.proximamente {
+    margin-top: 28px;
+    background: #ededed;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.proximamente strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.proximamente p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+/* CIERRE */
+
+.cierre-rojo {
+    margin-top: 34px;
+    background: #e30613;
+    color: #ffffff;
+    padding: 31px 24px 29px;
+    border-radius: 18px 18px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cierre-rojo::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 28px solid rgba(255,255,255,.07);
+    border-radius: 50%;
+    right: -70px;
+    top: -65px;
+}
+
+.cierre-linea {
+    width: 42px;
+    height: 5px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.cierre-rojo h2 {
+    margin: 0;
+    font-size: 29px;
+    line-height: 1.02;
+    font-weight: 900;
+    letter-spacing: -.5px;
+    position: relative;
+    z-index: 2;
+}
+
+.cierre-marca {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255,255,255,.35);
+    position: relative;
+    z-index: 2;
+}
+
+.cierre-marca strong {
+    display: block;
+    font-size: 13px;
+}
+
+.cierre-marca span {
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: .85;
+}
+
+@media (min-width: 700px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="cabecera">
+
+        <img
+            class="logo-ugt"
+            src="logo.png"
+            alt="UGT FeSMC"
+        >
+
+        <div class="marca-texto">
+
+            <strong>EL CORTE INGLÉS</strong>
+
+            <span class="fesmc">
+                FeSMC
+            </span>
+
+            <span class="territorio">
+                Andalucía Occidental · Extremadura
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-contenido">
+
+        <a class="volver" href="index.html">
+            <span>←</span> Inicio
+        </a>
+
+        <div class="linea-roja"></div>
+
+        <h1>
+            CONOCE TUS<br>
+            DERECHOS
+        </h1>
+
+        <p>
+            Tu convenio y la información laboral
+            que necesitas, siempre a mano.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main>
+
+
+<section class="intro-derechos">
+
+    <div class="icono-derechos">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+        </svg>
+
+    </div>
+
+    <div>
+
+        <strong>Información para defender tus derechos.</strong>
+
+        <p>
+            Consulta directamente la documentación laboral
+            que regula tus condiciones de trabajo.
+        </p>
+
+    </div>
+
+</section>
+
+
+<div class="titulo-seccion">
+    <h2>Tu convenio</h2>
+</div>
+
+
+<section class="convenio">
+
+    <div class="convenio-cabecera">
+        DOCUMENTO OFICIAL
+    </div>
+
+    <div class="convenio-contenido">
+
+        <div class="documento-icono">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2h8l4 4v16H6z"></path>
+                <path d="M14 2v5h5"></path>
+                <path d="M9 12h6"></path>
+                <path d="M9 16h6"></path>
+            </svg>
+
+        </div>
+
+        <h3>
+            Convenio Colectivo<br>
+            de Grandes Almacenes
+        </h3>
+
+        <span class="periodo">
+            2023 – 2026
+        </span>
+
+        <p>
+            Consulta el texto completo del convenio colectivo
+            aplicable al sector de grandes almacenes.
+        </p>
+
+        <a
+            class="boton-convenio"
+            href="convenio-grandes-almacenes-2023-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            CONSULTAR CONVENIO
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="proximamente">
+
+    <strong>Seguiremos ampliando esta sección.</strong>
+
+    <p>
+        Próximamente podrás encontrar aquí información
+        práctica sobre permisos, jornada, vacaciones,
+        conciliación y otros derechos laborales.
+    </p>
+
+</section>
+
+
+<section class="cierre-rojo">
+
+    <div class="cierre-linea"></div>
+
+    <h2>
+        HAY OTRA FORMA<br>
+        DE HACER LAS COSAS.
+    </h2>
+
+    <div class="cierre-marca">
+
+        <strong>
+            UGT El Corte Inglés · FeSMC
+        </strong>
+
+        <span>
+            Andalucía Occidental · Extremadura
+        </span>
+
+    </div>
+
+</section>
+
+
+</main>
+
+</body>
+</html>
