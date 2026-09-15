@@ -69,30 +69,32 @@ header {
     line-height: 1.2;
 }
 
-/* HERO */
+/* HERO DERECHOS */
 
 .hero {
-    background: #202020;
-    color: white;
     position: relative;
+    color: white;
     overflow: hidden;
-}
 
-.hero::after {
-    content: "§";
-    position: absolute;
-    right: -15px;
-    bottom: -65px;
-    font-size: 250px;
-    font-weight: bold;
-    color: rgba(255,255,255,.045);
-    line-height: 1;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(10,10,10,.97) 0%,
+            rgba(10,10,10,.91) 38%,
+            rgba(10,10,10,.55) 68%,
+            rgba(10,10,10,.25) 100%
+        ),
+        url("derechos-hero.png");
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 }
 
 .hero-contenido {
     max-width: 680px;
     margin: auto;
-    padding: 32px 22px 42px;
+    padding: 32px 22px 44px;
     position: relative;
     z-index: 2;
 }
@@ -109,6 +111,7 @@ header {
     font-size: 13px;
     font-weight: 800;
     margin-bottom: 38px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
 .volver span {
@@ -129,14 +132,16 @@ header {
     font-size: 37px;
     line-height: 1.02;
     font-weight: 900;
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
 }
 
 .hero p {
     margin: 15px 0 0;
-    color: #dedede;
+    color: #e6e6e6;
     font-size: 16px;
     line-height: 1.45;
-    max-width: 500px;
+    max-width: 420px;
+    text-shadow: 0 1px 5px rgba(0,0,0,.5);
 }
 
 /* CONTENIDO */
@@ -383,12 +388,50 @@ main {
     opacity: .85;
 }
 
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .hero {
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(12,12,12,.98) 0%,
+                rgba(12,12,12,.93) 43%,
+                rgba(12,12,12,.60) 72%,
+                rgba(12,12,12,.38) 100%
+            ),
+            url("derechos-hero.png");
+
+        background-size: auto 100%;
+        background-position: 63% center;
+    }
+
+    .hero-contenido {
+        min-height: 305px;
+    }
+
+    .hero h1 {
+        max-width: 330px;
+    }
+
+    .hero p {
+        max-width: 310px;
+    }
+}
+
+/* PANTALLAS GRANDES */
+
 @media (min-width: 700px) {
 
     .hero h1 {
         font-size: 45px;
     }
 
+    .hero-contenido {
+        padding-top: 38px;
+        padding-bottom: 52px;
+    }
 }
 
 </style>
