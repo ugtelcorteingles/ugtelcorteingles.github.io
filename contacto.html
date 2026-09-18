@@ -80,7 +80,6 @@ header {
         );
 }
 
-/* ELEMENTO GRÁFICO DE FONDO */
 .bocadillo-fondo {
     position: absolute;
     width: 190px;
@@ -109,24 +108,18 @@ header {
     padding: 18px 20px 27px;
 }
 
-/* VOLVER */
 .volver {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-
     background: rgba(255,255,255,.94);
     color: #202020;
-
     padding: 8px 13px;
     border-radius: 20px;
-
     text-decoration: none;
     font-size: 12px;
     font-weight: 800;
-
     margin-bottom: 25px;
-
     box-shadow: 0 3px 10px rgba(0,0,0,.10);
 }
 
@@ -160,7 +153,6 @@ header {
     line-height: 1.4;
 }
 
-/* CONTENIDO */
 main {
     max-width: 680px;
     margin: auto;
@@ -241,6 +233,11 @@ button {
     cursor: pointer;
 }
 
+button:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
 .privacidad {
     display: flex;
     gap: 9px;
@@ -266,6 +263,40 @@ button {
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+/* MENSAJE DE RESULTADO */
+.resultado {
+    display: none;
+    margin-top: 16px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.resultado.exito {
+    display: block;
+    background: #eef8f0;
+    color: #176b2c;
+    border: 1px solid #bfe0c6;
+}
+
+.resultado.error {
+    display: block;
+    background: #fff0f1;
+    color: #a9000b;
+    border: 1px solid #f1c1c5;
+}
+
+/* CAMPO ANTISPAM INVISIBLE PARA PERSONAS */
+.campo-web {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
 }
 
 /* CIERRE */
@@ -478,9 +509,28 @@ button {
         required
     ></textarea>
 
-    <button type="submit">
+    <!-- Campo antispam. Una persona normal no lo verá. -->
+    <div class="campo-web" aria-hidden="true">
+        <label for="web">No rellenar este campo</label>
+        <input
+            type="text"
+            id="web"
+            name="web"
+            tabindex="-1"
+            autocomplete="off"
+        >
+    </div>
+
+    <button id="botonEnviar" type="submit">
         ENVIAR CONSULTA
     </button>
+
+    <div
+        id="resultado"
+        class="resultado"
+        role="status"
+        aria-live="polite"
+    ></div>
 
     <div class="privacidad">
 
@@ -561,22 +611,84 @@ if (centro === "San Juan") {
 }
 
 
-/* BLOQUEO TEMPORAL DEL ENVÍO */
+/* ENVÍO REAL DEL FORMULARIO A STRATO */
 
-document
-    .getElementById("contactoForm")
-    .addEventListener(
-        "submit",
-        function(e) {
+const formulario =
+    document.getElementById("contactoForm");
 
-            e.preventDefault();
+const botonEnviar =
+    document.getElementById("botonEnviar");
 
-            alert(
-                "El formulario está preparado. La recepción de consultas se activará próximamente."
+const resultado =
+    document.getElementById("resultado");
+
+formulario.addEventListener(
+    "submit",
+    async function(e) {
+
+        e.preventDefault();
+
+        resultado.className = "resultado";
+        resultado.textContent = "";
+
+        botonEnviar.disabled = true;
+        botonEnviar.textContent = "ENVIANDO...";
+
+        try {
+
+            const respuesta = await fetch(
+                "https://ugteci.es/enviar-contacto.php",
+                {
+                    method: "POST",
+                    body: new FormData(formulario)
+                }
             );
 
+            const datos = await respuesta.json();
+
+            if (respuesta.ok && datos.ok) {
+
+                resultado.className =
+                    "resultado exito";
+
+                resultado.textContent =
+                    "Consulta enviada correctamente. UGT se pondrá en contacto contigo.";
+
+                const centroSeleccionado =
+                    formulario.centro.value;
+
+                formulario.reset();
+
+                formulario.centro.value =
+                    centroSeleccionado;
+
+            } else {
+
+                throw new Error(
+                    datos.message ||
+                    "No se ha podido enviar la consulta."
+                );
+
+            }
+
+        } catch (error) {
+
+            resultado.className =
+                "resultado error";
+
+            resultado.textContent =
+                "No se ha podido enviar la consulta. Inténtalo de nuevo en unos minutos.";
+
+        } finally {
+
+            botonEnviar.disabled = false;
+            botonEnviar.textContent =
+                "ENVIAR CONSULTA";
+
         }
-    );
+
+    }
+);
 
 </script>
 
