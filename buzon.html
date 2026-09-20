@@ -899,21 +899,59 @@ inputArchivos.addEventListener('change', function() {
 });
 
 
-/* ENVÍO TODAVÍA DESACTIVADO */
+/* ENVÍO DEL BUZÓN */
 
 document
 .getElementById("buzonForm")
-.addEventListener("submit", function(e) {
+.addEventListener("submit", async function(e) {
 
     e.preventDefault();
 
-    alert(
-        "El buzón está preparado. Falta conectar el sistema seguro de recepción antes de activar los envíos."
-    );
+    const formulario = this;
+    const boton = formulario.querySelector('button[type="submit"]');
+    const textoOriginal = boton.textContent;
 
-});
+    boton.disabled = true;
+    boton.textContent = "ENVIANDO...";
 
-</script>
+    try {
+
+        const datos = new FormData(formulario);
+
+        const respuesta = await fetch(
+            "https://ugteci.es/enviar-buzon.php",
+            {
+                method: "POST",
+                body: datos
+            }
+        );
+
+        const resultado = await respuesta.json();
+
+        if (!respuesta.ok || !resultado.ok) {
+            throw new Error();
+        }
+
+        alert("Información enviada correctamente. Gracias por confiar en UGT.");
+
+        formulario.reset();
+        datosContacto.style.display = "none";
+        campoContacto.required = false;
+        zonaArchivos.classList.remove("activo");
+        textoArchivos.textContent = "";
+
+    } catch (error) {
+
+        alert("No se ha podido enviar la información. Inténtalo de nuevo dentro de unos minutos.");
+
+    } finally {
+
+        boton.disabled = false;
+        boton.textContent = textoOriginal;
+
+    }
+
+});</script>
 
 </body>
 </html>
