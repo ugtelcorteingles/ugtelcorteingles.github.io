@@ -434,6 +434,367 @@ main {
     }
 }
 
+    /* FICHA HORAS COMPLEMENTARIAS */
+
+.titulo-dudas {
+    margin-top: 32px;
+}
+
+.ficha-derecho {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(0,0,0,.09);
+    margin-bottom: 32px;
+}
+
+.ficha-hero {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 25px 22px 27px;
+    background: linear-gradient(135deg, #b70d18 0%, #e30613 58%, #a20c16 100%);
+}
+
+.ficha-hero::after {
+    content: "3";
+    position: absolute;
+    right: -10px;
+    top: -40px;
+    font-size: 150px;
+    line-height: 1;
+    font-weight: 900;
+    color: rgba(255,255,255,.08);
+}
+
+.ficha-etiqueta {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,.16);
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.ficha-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.ficha-icono {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    background: #ffffff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.ficha-titulo h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: .98;
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+.ficha-titulo p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: rgba(255,255,255,.88);
+    font-weight: 700;
+}
+
+.ficha-contenido {
+    padding: 24px 20px;
+}
+
+.ficha-intro {
+    margin: 0 0 15px;
+    text-align: center;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.claves {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.clave {
+    background: #f3f3f3;
+    border-radius: 13px;
+    padding: 15px 5px 13px;
+    text-align: center;
+    min-width: 0;
+}
+
+.clave strong {
+    display: block;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    color: #202020;
+}
+
+.clave b {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.clave span {
+    display: block;
+    margin-top: 4px;
+    color: #777777;
+    font-size: 9px;
+    line-height: 1.2;
+}
+
+.bloque-derecho {
+    border: 1px solid #e3e3e3;
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 25px;
+}
+
+.mini-titulo {
+    display: block;
+    color: #e30613;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.bloque-derecho h3 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.bloque-derecho p {
+    margin: 8px 0 0;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.bloque-derecho p strong {
+    color: #202020;
+}
+
+.pregunta-central {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .7px;
+}
+
+.pregunta-central::before,
+.pregunta-central::after {
+    content: "";
+    height: 1px;
+    background: #dddddd;
+    flex: 1;
+}
+
+.tipos-horas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+    margin-bottom: 24px;
+}
+
+.tipo-hora {
+    border-radius: 15px;
+    padding: 17px;
+}
+
+.tipo-hora.pactadas {
+    border: 2px solid #e30613;
+    background: #ffffff;
+}
+
+.tipo-hora.voluntarias {
+    border: 1px solid #e0e0e0;
+    background: #f4f4f4;
+}
+
+.tipo-etiqueta {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.pactadas .tipo-etiqueta {
+    background: #e30613;
+    color: #ffffff;
+}
+
+.voluntarias .tipo-etiqueta {
+    background: #ffffff;
+    color: #202020;
+    border: 1px solid #dddddd;
+}
+
+.tipo-hora h3 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.tipo-hora p {
+    margin: 8px 0 0;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.comprobaciones {
+    background: #f3f3f3;
+    border-radius: 16px;
+    padding: 19px;
+    margin-bottom: 15px;
+}
+
+.comprobaciones h3 {
+    margin: 0 0 17px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.comprobaciones p {
+    position: relative;
+    margin: 0 0 15px;
+    padding-left: 35px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.comprobaciones p:last-child {
+    margin-bottom: 0;
+}
+
+.comprobaciones p > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: #e30613;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.comprobaciones strong {
+    color: #202020;
+    font-size: 13px;
+}
+
+.mas-info {
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 14px 15px;
+    margin-top: 13px;
+}
+
+.mas-info summary {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.mas-info p {
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 13px 0 2px;
+}
+
+.ayuda-ugt {
+    margin-top: 20px;
+    background: #181818;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 21px;
+}
+
+.ayuda-ugt > span {
+    display: block;
+    color: #aaaaaa;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.ayuda-ugt h3 {
+    margin: 6px 0 0;
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.ayuda-ugt p {
+    margin: 9px 0 17px;
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.ayuda-ugt a {
+    display: block;
+    background: #e30613;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 11px;
+    padding: 14px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+@media (max-width: 420px) {
+
+    .ficha-titulo h2 {
+        font-size: 25px;
+    }
+
+    .clave strong {
+        font-size: 24px;
+    }
+
+    .tipos-horas {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
@@ -574,20 +935,193 @@ main {
 </section>
 
 
-<section class="proximamente">
+<!-- HORAS COMPLEMENTARIAS -->
 
-    <strong>Seguiremos ampliando esta sección.</strong>
+<div class="titulo-seccion titulo-dudas">
+    <h2>Resolvemos tus dudas</h2>
+</div>
 
-    <p>
-        Próximamente podrás encontrar aquí información
-        práctica sobre permisos, jornada, vacaciones,
-        conciliación y otros derechos laborales.
-    </p>
+<section class="ficha-derecho">
+
+    <div class="ficha-hero">
+
+        <div class="ficha-etiqueta">
+            UGT · CONOCE TUS DERECHOS
+        </div>
+
+        <div class="ficha-titulo">
+
+            <div class="ficha-icono">
+                ⏱️
+            </div>
+
+            <div>
+                <h2>HORAS<br>COMPLEMENTARIAS</h2>
+                <p>Que no te líen con tus horas.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="ficha-contenido">
+
+        <p class="ficha-intro">
+            Quédate con estas tres claves
+        </p>
+
+        <div class="claves">
+
+            <div class="clave">
+                <strong>3</strong>
+                <b>DÍAS</b>
+                <span>de preaviso</span>
+            </div>
+
+            <div class="clave">
+                <strong>60%</strong>
+                <b>PACTADAS</b>
+                <span>máximo convenio</span>
+            </div>
+
+            <div class="clave">
+                <strong>30%</strong>
+                <b>VOLUNTARIAS</b>
+                <span>puedes decir no</span>
+            </div>
+
+        </div>
+
+
+        <div class="bloque-derecho">
+
+            <span class="mini-titulo">PRIMERO, LO BÁSICO</span>
+
+            <h3>¿Qué son?</h3>
+
+            <p>
+                Son horas que realizas además de las horas ordinarias
+                de tu contrato a tiempo parcial.
+                <strong>No son horas extraordinarias</strong>
+                y se retribuyen como horas ordinarias.
+            </p>
+
+        </div>
+
+
+        <h3 class="pregunta-central">
+            ¿TENGO QUE HACERLAS?
+        </h3>
+
+
+        <div class="tipos-horas">
+
+            <div class="tipo-hora pactadas">
+
+                <span class="tipo-etiqueta">
+                    PACTADAS
+                </span>
+
+                <h3>Pueden ser obligatorias</h3>
+
+                <p>
+                    Si existe pacto escrito y se cumplen
+                    los requisitos legales y del convenio.
+                </p>
+
+            </div>
+
+
+            <div class="tipo-hora voluntarias">
+
+                <span class="tipo-etiqueta">
+                    VOLUNTARIAS
+                </span>
+
+                <h3>Puedes decir NO</h3>
+
+                <p>
+                    Rechazarlas no puede ser motivo de sanción
+                    cuando son voluntarias.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="comprobaciones">
+
+            <h3>Antes de hacerlas, comprueba 👇</h3>
+
+            <p>
+                <span>✓</span>
+                <strong>Te han avisado con 3 días.</strong><br>
+                Deben indicarte el día y la hora.
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Se respetan tus descansos.</strong><br>
+                También el descanso mínimo entre jornadas.
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Van al inicio o final de tu jornada.</strong><br>
+                Cuando ese día ya tienes jornada ordinaria.
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Si librabas: mínimo 4 horas continuadas.</strong><br>
+                Conforme a las condiciones aplicables.
+            </p>
+
+        </div>
+
+
+        <details class="mas-info">
+
+            <summary>
+                ¿Cómo se registran y pagan?
+            </summary>
+
+            <p>
+                Se retribuyen como horas ordinarias.
+                La jornada a tiempo parcial debe registrarse diariamente
+                y debes disponer del resumen correspondiente de las horas
+                ordinarias y complementarias realizadas.
+            </p>
+
+        </details>
+
+
+        <div class="ayuda-ugt">
+
+            <span>¿ALGO NO TE CUADRA?</span>
+
+            <h3>
+                Tus horas también son tus derechos.
+            </h3>
+
+            <p>
+                Cuéntanos tu caso y comprobamos contigo
+                si se están cumpliendo las condiciones.
+            </p>
+
+            <a href="contacto.html">
+                CONTACTA CON UGT →
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
-
-
-<section class="cierre-rojo">
+    
+    <section class="cierre-rojo">
 
     <div class="cierre-linea"></div>
 
