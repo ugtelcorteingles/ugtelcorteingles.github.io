@@ -900,7 +900,8 @@ main {
 #ficha-horas .bloque-derecho h3::after,
 #ficha-hospitalizacion .bloque-derecho h3::after,
 #ficha-matrimonio .bloque-derecho h3::after,
-#ficha-jornada .bloque-derecho h3::after {
+#ficha-jornada .bloque-derecho h3::after,
+#ficha-parentesco .bloque-derecho h3::after {
     content: "";
     display: block;
     width: 55px;
@@ -1086,11 +1087,11 @@ main {
         <small>VER INFORMACIÓN</small>
     </button>
 
-    <button class="menu-derecho" type="button" disabled aria-label="Grados de parentesco, próximamente">
+    <button class="menu-derecho disponible" type="button" data-ficha="ficha-parentesco" aria-label="Grados de parentesco, disponible">
         <span class="menu-numero">05</span>
         <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20v-2a5 5 0 0 1 10 0v2M14 20v-1.5a4 4 0 0 1 7 0V20"></path></svg></span>
         <strong>Grados de<br>parentesco</strong>
-        <small>PRÓXIMAMENTE</small>
+        <small>VER INFORMACIÓN</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Desempleo, próximamente">
@@ -1647,6 +1648,76 @@ main {
                 Cuéntanos tu caso y comprobamos contigo
                 tu jornada y los excesos pendientes.
             </p>
+            <a href="contacto.html">CONTACTA CON UGT →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="ficha-derecho" id="ficha-parentesco" hidden>
+
+    <div class="ficha-hero" data-numero="05">
+        <div class="ficha-etiqueta">UGT · CONOCE TUS DERECHOS</div>
+        <div class="ficha-titulo">
+            <div class="ficha-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:none;stroke:#e30613;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20v-2a5 5 0 0 1 10 0v2M14 20v-1.5a4 4 0 0 1 7 0V20"></path></svg>
+            </div>
+            <div>
+                <h2>GRADOS DE<br>PARENTESCO</h2>
+                <p>Una guía rápida para saber hasta dónde llega cada grado.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ficha-contenido">
+
+        <p class="ficha-intro">Localiza rápidamente el parentesco que necesitas</p>
+
+        <div class="bloque-derecho">
+            <span class="mini-titulo">1.er GRADO</span>
+            <h3>Familia más directa</h3>
+            <p><strong>Padre / Madre · Hijo / Hija · Suegro / Suegra · Yerno / Nuera</strong></p>
+        </div>
+
+        <div class="bloque-derecho">
+            <span class="mini-titulo">2.º GRADO</span>
+            <h3>Hasta segundo grado</h3>
+            <p><strong>Abuelo / Abuela · Hermano / Hermana · Nieto / Nieta · Cuñado / Cuñada</strong></p>
+        </div>
+
+        <div class="bloque-derecho">
+            <span class="mini-titulo">3.er GRADO</span>
+            <h3>Tercer grado</h3>
+            <p><strong>Bisabuelo / Bisabuela · Tío / Tía · Sobrino / Sobrina · Bisnieto / Bisnieta</strong></p>
+        </div>
+
+        <div class="bloque-derecho">
+            <span class="mini-titulo">4.º GRADO</span>
+            <h3>Cuarto grado</h3>
+            <p><strong>Primo / Prima</strong></p>
+        </div>
+
+        <h3 class="pregunta-central">¿CONSANGUINIDAD O AFINIDAD?</h3>
+
+        <div class="tipos-horas">
+            <div class="tipo-hora pactadas">
+                <span class="tipo-etiqueta">CONSANGUINIDAD</span>
+                <h3>Tu propia familia</h3>
+                <p>Parentesco que deriva de vínculos familiares de sangre.</p>
+            </div>
+            <div class="tipo-hora voluntarias">
+                <span class="tipo-etiqueta">AFINIDAD</span>
+                <h3>Familia de tu cónyuge</h3>
+                <p>Parentesco que se genera por el matrimonio.</p>
+            </div>
+        </div>
+
+        <div class="ayuda-ugt">
+            <span>¿TIENES DUDAS SOBRE UN PERMISO?</span>
+            <h3>El parentesco puede determinar qué derecho te corresponde.</h3>
+            <p>Cuéntanos tu caso y lo comprobamos contigo.</p>
             <a href="contacto.html">CONTACTA CON UGT →</a>
         </div>
 
