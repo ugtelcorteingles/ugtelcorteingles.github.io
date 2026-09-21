@@ -469,10 +469,14 @@ main {
     position: absolute;
     right: 9px;
     top: 5px;
-    color: #eeeeee;
+    color: rgba(227,6,19,.30);
     font-size: 34px;
     line-height: 1;
     font-weight: 900;
+}
+
+.menu-derecho.activo .menu-numero {
+    color: #e30613;
 }
 
 .menu-icono {
@@ -485,8 +489,19 @@ main {
     justify-content: center;
     border-radius: 10px;
     background: #fff1f2;
+    color: #e30613;
     margin-bottom: 10px;
     font-size: 18px;
+}
+
+.menu-icono svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .menu-derecho strong {
@@ -535,11 +550,11 @@ main {
 }
 
 .ficha-hero::after {
-    content: "3";
+    content: "01";
     position: absolute;
-    right: -10px;
-    top: -40px;
-    font-size: 150px;
+    right: -4px;
+    top: -28px;
+    font-size: 112px;
     line-height: 1;
     font-weight: 900;
     color: rgba(255,255,255,.08);
@@ -1026,49 +1041,49 @@ main {
 
     <button class="menu-derecho activo" type="button" aria-label="Horas complementarias, disponible">
         <span class="menu-numero">01</span>
-        <span class="menu-icono">⏱️</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2M9 2h6M12 2v3"></path></svg></span>
         <strong>Horas<br>complementarias</strong>
         <small>VER INFORMACIÓN</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Hospitalización y permisos médicos, próximamente">
         <span class="menu-numero">02</span>
-        <span class="menu-icono">🏥</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V6h14v15M9 6V3h6v3M9 11h6M12 8v6M8 21v-4h8v4"></path></svg></span>
         <strong>Hospitalización y<br>permisos médicos</strong>
         <small>PRÓXIMAMENTE</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Matrimonio, próximamente">
         <span class="menu-numero">03</span>
-        <span class="menu-icono">💍</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="6"></circle><path d="M9 7l3-4 3 4-3 2z"></path></svg></span>
         <strong>Matrimonio</strong>
         <small>PRÓXIMAMENTE</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Jornada y excesos, próximamente">
         <span class="menu-numero">04</span>
-        <span class="menu-icono">🕐</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l-3 2"></path></svg></span>
         <strong>Jornada y<br>excesos</strong>
         <small>PRÓXIMAMENTE</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Grados de parentesco, próximamente">
         <span class="menu-numero">05</span>
-        <span class="menu-icono">👨‍👩‍👧</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20v-2a5 5 0 0 1 10 0v2M14 20v-1.5a4 4 0 0 1 7 0V20"></path></svg></span>
         <strong>Grados de<br>parentesco</strong>
         <small>PRÓXIMAMENTE</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Desempleo, próximamente">
         <span class="menu-numero">06</span>
-        <span class="menu-icono">💼</span>
+        <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V4h6v3M3 12h18M10 12v2h4v-2"></path></svg></span>
         <strong>Desempleo</strong>
         <small>PRÓXIMAMENTE</small>
     </button>
 
 </div>
 
-<section class="ficha-derecho">
+<section class="ficha-derecho" id="ficha-horas" hidden>
 
     <div class="ficha-hero">
 
@@ -1078,8 +1093,8 @@ main {
 
         <div class="ficha-titulo">
 
-            <div class="ficha-icono">
-                ⏱️
+            <div class="ficha-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:none;stroke:#e30613;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2M9 2h6M12 2v3"></path></svg>
             </div>
 
             <div>
@@ -1273,6 +1288,25 @@ main {
 
 
 </main>
+
+<script>
+const botonHoras = document.querySelector(".menu-derecho.activo");
+const fichaHoras = document.getElementById("ficha-horas");
+
+if (botonHoras && fichaHoras) {
+    botonHoras.setAttribute("aria-expanded", "false");
+    botonHoras.setAttribute("aria-controls", "ficha-horas");
+
+    botonHoras.addEventListener("click", function () {
+        const abrir = fichaHoras.hidden;
+        fichaHoras.hidden = !abrir;
+        botonHoras.setAttribute("aria-expanded", abrir ? "true" : "false");
+        const estado = botonHoras.querySelector("small");
+        if (estado) estado.textContent = abrir ? "OCULTAR INFORMACIÓN" : "VER INFORMACIÓN";
+        if (abrir) fichaHoras.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+}
+</script>
 
 </body>
 </html>
