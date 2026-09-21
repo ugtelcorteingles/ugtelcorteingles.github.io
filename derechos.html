@@ -456,9 +456,11 @@ main {
     overflow: hidden;
 }
 
-.menu-derecho.activo {
+.menu-derecho.activo,
+.menu-derecho.disponible {
     border: 2px solid #e30613;
     box-shadow: 0 4px 14px rgba(227,6,19,.08);
+    cursor: pointer;
 }
 
 .menu-derecho:not(.activo) {
@@ -475,7 +477,8 @@ main {
     font-weight: 900;
 }
 
-.menu-derecho.activo .menu-numero {
+.menu-derecho.activo .menu-numero,
+.menu-derecho.disponible .menu-numero {
     color: #e30613;
 }
 
@@ -523,7 +526,8 @@ main {
     font-weight: 700;
 }
 
-.menu-derecho.activo small {
+.menu-derecho.activo small,
+.menu-derecho.disponible small {
     color: #e30613;
 }
 
@@ -550,7 +554,7 @@ main {
 }
 
 .ficha-hero::after {
-    content: "01";
+    content: attr(data-numero);
     position: absolute;
     right: -4px;
     top: -28px;
@@ -1046,11 +1050,11 @@ main {
         <small>VER INFORMACIÓN</small>
     </button>
 
-    <button class="menu-derecho" type="button" disabled aria-label="Hospitalización y permisos médicos, próximamente">
+    <button class="menu-derecho disponible" type="button" data-ficha="ficha-hospitalizacion" aria-label="Hospitalización y permisos médicos, disponible">
         <span class="menu-numero">02</span>
         <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V6h14v15M9 6V3h6v3M9 11h6M12 8v6M8 21v-4h8v4"></path></svg></span>
         <strong>Hospitalización y<br>permisos médicos</strong>
-        <small>PRÓXIMAMENTE</small>
+        <small>VER INFORMACIÓN</small>
     </button>
 
     <button class="menu-derecho" type="button" disabled aria-label="Matrimonio, próximamente">
@@ -1085,7 +1089,7 @@ main {
 
 <section class="ficha-derecho" id="ficha-horas" hidden>
 
-    <div class="ficha-hero">
+    <div class="ficha-hero" data-numero="01">
 
         <div class="ficha-etiqueta">
             UGT · CONOCE TUS DERECHOS
@@ -1263,6 +1267,166 @@ main {
 
 </section>
     
+
+<section class="ficha-derecho" id="ficha-hospitalizacion" hidden>
+
+    <div class="ficha-hero" data-numero="02">
+
+        <div class="ficha-etiqueta">
+            UGT · CONOCE TUS DERECHOS
+        </div>
+
+        <div class="ficha-titulo">
+
+            <div class="ficha-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:none;stroke:#e30613;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 21V6h14v15M9 6V3h6v3M9 11h6M12 8v6M8 21v-4h8v4"></path></svg>
+            </div>
+
+            <div>
+                <h2>HOSPITALIZACIÓN Y<br>PERMISOS MÉDICOS</h2>
+                <p>Cuando tienes que estar, conoce el tiempo que te corresponde.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ficha-contenido">
+
+        <p class="ficha-intro">
+            Quédate con estas tres claves
+        </p>
+
+        <div class="claves">
+
+            <div class="clave">
+                <strong>5</strong>
+                <b>DÍAS</b>
+                <span>de permiso retribuido</span>
+            </div>
+
+            <div class="clave">
+                <strong>2.º</strong>
+                <b>GRADO</b>
+                <span>familiares incluidos</span>
+            </div>
+
+            <div class="clave">
+                <strong style="font-size:18px;line-height:1.05">TIEMPO</strong>
+                <b>PRECISO</b>
+                <span>para tu consulta médica</span>
+            </div>
+
+        </div>
+
+        <div class="bloque-derecho">
+
+            <span class="mini-titulo">PERMISO RETRIBUIDO</span>
+
+            <h3>¿Cuándo tienes derecho a 5 días?</h3>
+
+            <p>
+                Por <strong>accidente o enfermedad grave, hospitalización</strong>
+                o intervención quirúrgica sin hospitalización que requiera
+                <strong>reposo domiciliario</strong>.
+            </p>
+
+        </div>
+
+        <h3 class="pregunta-central">
+            ¿POR QUIÉN PUEDES SOLICITARLO?
+        </h3>
+
+        <div class="comprobaciones">
+
+            <p>
+                <span>✓</span>
+                <strong>Tu cónyuge o pareja de hecho.</strong>
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Familiares hasta segundo grado.</strong><br>
+                Por consanguinidad o afinidad.
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Familiares consanguíneos de tu pareja de hecho.</strong>
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Otra persona que conviva contigo.</strong><br>
+                Cuando necesite tu cuidado efectivo.
+            </p>
+
+        </div>
+
+        <div class="bloque-derecho">
+
+            <span class="mini-titulo">TU CONSULTA MÉDICA</span>
+
+            <h3>Tienes derecho al tiempo preciso</h3>
+
+            <p>
+                Cuando necesites acudir al médico por enfermedad propia y la consulta
+                coincida con tu jornada laboral, puedes ausentarte durante el
+                <strong>tiempo preciso</strong>, con la correspondiente justificación.
+            </p>
+
+            <p>
+                <strong>Sanidad pública o privada.</strong>
+            </p>
+
+        </div>
+
+        <div class="comprobaciones">
+
+            <h3>Antes de pedirlo, comprueba 👇</h3>
+
+            <p>
+                <span>✓</span>
+                <strong>Dispones del justificante correspondiente.</strong>
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Si es una intervención sin hospitalización,</strong><br>
+                debe quedar acreditada la necesidad de reposo domiciliario.
+            </p>
+
+            <p>
+                <span>✓</span>
+                <strong>Comunica la ausencia a la empresa</strong><br>
+                y aporta posteriormente la justificación correspondiente.
+            </p>
+
+        </div>
+
+        <div class="ayuda-ugt">
+
+            <span>¿ALGO NO TE CUADRA?</span>
+
+            <h3>
+                Tus permisos también son tus derechos.
+            </h3>
+
+            <p>
+                Cuéntanos tu caso y comprobamos contigo
+                qué permiso te corresponde.
+            </p>
+
+            <a href="contacto.html">
+                CONTACTA CON UGT →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
     <section class="cierre-rojo">
 
     <div class="cierre-linea"></div>
@@ -1290,22 +1454,38 @@ main {
 </main>
 
 <script>
-const botonHoras = document.querySelector(".menu-derecho.activo");
-const fichaHoras = document.getElementById("ficha-horas");
+const botonesDerechos = document.querySelectorAll(".menu-derecho.activo, .menu-derecho.disponible");
 
-if (botonHoras && fichaHoras) {
-    botonHoras.setAttribute("aria-expanded", "false");
-    botonHoras.setAttribute("aria-controls", "ficha-horas");
+botonesDerechos.forEach(function (boton, indice) {
+    const fichaId = boton.dataset.ficha || (indice === 0 ? "ficha-horas" : "");
+    const ficha = document.getElementById(fichaId);
 
-    botonHoras.addEventListener("click", function () {
-        const abrir = fichaHoras.hidden;
-        fichaHoras.hidden = !abrir;
-        botonHoras.setAttribute("aria-expanded", abrir ? "true" : "false");
-        const estado = botonHoras.querySelector("small");
-        if (estado) estado.textContent = abrir ? "OCULTAR INFORMACIÓN" : "VER INFORMACIÓN";
-        if (abrir) fichaHoras.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!ficha) return;
+
+    boton.setAttribute("aria-expanded", "false");
+    boton.setAttribute("aria-controls", fichaId);
+
+    boton.addEventListener("click", function () {
+        const abrir = ficha.hidden;
+
+        document.querySelectorAll(".ficha-derecho").forEach(function (otraFicha) {
+            otraFicha.hidden = true;
+        });
+
+        botonesDerechos.forEach(function (otroBoton) {
+            otroBoton.setAttribute("aria-expanded", "false");
+            const estado = otroBoton.querySelector("small");
+            if (estado) estado.textContent = "VER INFORMACIÓN";
+        });
+
+        if (abrir) {
+            ficha.hidden = false;
+            boton.setAttribute("aria-expanded", "true");
+            const estado = boton.querySelector("small");
+            if (estado) estado.textContent = "OCULTAR INFORMACIÓN";
+        }
     });
-}
+});
 </script>
 
 </body>
