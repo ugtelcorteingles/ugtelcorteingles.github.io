@@ -434,7 +434,85 @@ main {
     }
 }
 
-    /* FICHA HORAS COMPLEMENTARIAS */
+    /* MENÚ VISUAL DE DERECHOS */
+
+.menu-derechos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+    margin-bottom: 20px;
+}
+
+.menu-derecho {
+    position: relative;
+    min-height: 112px;
+    border: 1px solid #e4e4e4;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 16px 13px 14px;
+    text-align: left;
+    font: inherit;
+    color: #202020;
+    overflow: hidden;
+}
+
+.menu-derecho.activo {
+    border: 2px solid #e30613;
+    box-shadow: 0 4px 14px rgba(227,6,19,.08);
+}
+
+.menu-derecho:not(.activo) {
+    opacity: .82;
+}
+
+.menu-numero {
+    position: absolute;
+    right: 9px;
+    top: 5px;
+    color: #eeeeee;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.menu-icono {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff1f2;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.menu-derecho strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-size: 13px;
+    line-height: 1.18;
+    font-weight: 900;
+}
+
+.menu-derecho small {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-top: 5px;
+    color: #777777;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.menu-derecho.activo small {
+    color: #e30613;
+}
+
+/* FICHA HORAS COMPLEMENTARIAS */
 
 .titulo-dudas {
     margin-top: 32px;
@@ -942,6 +1020,52 @@ main {
 
 <div class="titulo-seccion titulo-dudas">
     <h2>Resolvemos tus dudas</h2>
+</div>
+
+<div class="menu-derechos" aria-label="Materias laborales">
+
+    <button class="menu-derecho activo" type="button" aria-label="Horas complementarias, disponible">
+        <span class="menu-numero">01</span>
+        <span class="menu-icono">⏱️</span>
+        <strong>Horas<br>complementarias</strong>
+        <small>VER INFORMACIÓN</small>
+    </button>
+
+    <button class="menu-derecho" type="button" disabled aria-label="Hospitalización y permisos médicos, próximamente">
+        <span class="menu-numero">02</span>
+        <span class="menu-icono">🏥</span>
+        <strong>Hospitalización y<br>permisos médicos</strong>
+        <small>PRÓXIMAMENTE</small>
+    </button>
+
+    <button class="menu-derecho" type="button" disabled aria-label="Matrimonio, próximamente">
+        <span class="menu-numero">03</span>
+        <span class="menu-icono">💍</span>
+        <strong>Matrimonio</strong>
+        <small>PRÓXIMAMENTE</small>
+    </button>
+
+    <button class="menu-derecho" type="button" disabled aria-label="Jornada y excesos, próximamente">
+        <span class="menu-numero">04</span>
+        <span class="menu-icono">🕐</span>
+        <strong>Jornada y<br>excesos</strong>
+        <small>PRÓXIMAMENTE</small>
+    </button>
+
+    <button class="menu-derecho" type="button" disabled aria-label="Grados de parentesco, próximamente">
+        <span class="menu-numero">05</span>
+        <span class="menu-icono">👨‍👩‍👧</span>
+        <strong>Grados de<br>parentesco</strong>
+        <small>PRÓXIMAMENTE</small>
+    </button>
+
+    <button class="menu-derecho" type="button" disabled aria-label="Desempleo, próximamente">
+        <span class="menu-numero">06</span>
+        <span class="menu-icono">💼</span>
+        <strong>Desempleo</strong>
+        <small>PRÓXIMAMENTE</small>
+    </button>
+
 </div>
 
 <section class="ficha-derecho">
