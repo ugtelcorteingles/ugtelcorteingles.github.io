@@ -282,11 +282,9 @@ main {
 }
 
 .red-icono {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-    background: #f3f3f3;
-    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,26 +292,22 @@ main {
 }
 
 .red-icono svg {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     display: block;
 }
 
-/* COLORES REDES */
-.whatsapp svg {
-    fill: #25D366;
+.red-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
 }
 
-.instagram svg {
-    fill: #E1306C;
-}
-
-.tiktok svg {
-    fill: #111111;
-}
-
-.facebook svg {
-    fill: #1877F2;
+.red-texto small {
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #777;
 }
 
 
@@ -643,60 +637,24 @@ main {
 
     <div class="redes">
 
-        <a
-            class="red"
-            href="https://wa.me/message/5THSFIWNLIS4F1"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="red-icono whatsapp">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2a9.5 9.5 0 0 0-8.1 14.5L2.5 21.5l5.1-1.3A9.5 9.5 0 1 0 12 2zm0 17.2a7.6 7.6 0 0 1-3.9-1.1l-.3-.2-3 .8.8-2.9-.2-.3A7.7 7.7 0 1 1 12 19.2zm4.2-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.9c-.2.2-.3.2-.6.1a6.3 6.3 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.5-.6.2-.4c.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.3-.2-.6-.3z"/>
-                </svg>
-            </div>
-            WhatsApp
+        <a class="red" href="https://wa.me/message/5THSFIWNLIS4F1" target="_blank" rel="noopener noreferrer">
+            <div class="red-icono whatsapp"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#25D366"/><path fill="#fff" d="M34.6 28.9c-.6-.3-3.5-1.7-4-1.9-.5-.2-.9-.3-1.3.3-.4.6-1.5 1.9-1.8 2.3-.3.4-.7.4-1.3.1-3.5-1.7-5.8-3.1-8.1-7-.6-1 .6-1 1.7-3.3.2-.4.1-.8-.1-1.2-.1-.3-1.3-3.1-1.8-4.3-.5-1.2-1-1-1.3-1h-1.1c-.4 0-1 .1-1.5.7-.5.6-2 2-2 4.8s2.1 5.6 2.3 6c.3.4 4.1 6.2 9.9 8.7 3.7 1.6 5.1 1.7 6.9 1.4 1.1-.2 3.5-1.4 4-2.8.5-1.4.5-2.6.4-2.8-.2-.3-.5-.4-1.1-.7z"/></svg></div>
+            <span class="red-texto">WhatsApp<small>¿Hablamos?</small></span>
         </a>
 
-        <a
-            class="red"
-            href="https://www.instagram.com/ugt.elcorteingles/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="red-icono instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.7-3.2a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
-                </svg>
-            </div>
-            Instagram
+        <a class="red" href="https://www.instagram.com/ugt.elcorteingles/" target="_blank" rel="noopener noreferrer">
+            <div class="red-icono instagram"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="ig-gradient-sj" cx="30%" cy="105%" r="115%"><stop offset="0%" stop-color="#ffd600"/><stop offset="38%" stop-color="#ff7a00"/><stop offset="65%" stop-color="#ff0169"/><stop offset="100%" stop-color="#d300c5"/></radialGradient></defs><rect x="4" y="4" width="40" height="40" rx="11" fill="url(#ig-gradient-sj)"/><rect x="13" y="13" width="22" height="22" rx="7" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="5.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="32.5" cy="15.5" r="1.8" fill="#fff"/></svg></div>
+            <span class="red-texto">Instagram</span>
         </a>
 
-        <a
-            class="red"
-            href="https://www.tiktok.com/@ugt_elcorteingles"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="red-icono tiktok">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14.5 2h3a5.8 5.8 0 0 0 4.5 4.5v3a8.6 8.6 0 0 1-4.5-1.3v7.1a6.3 6.3 0 1 1-5.4-6.2v3.2a3.2 3.2 0 1 0 2.4 3.1V2z"/>
-                </svg>
-            </div>
-            TikTok
+        <a class="red" href="https://www.tiktok.com/@ugt_elcorteingles" target="_blank" rel="noopener noreferrer">
+            <div class="red-icono tiktok"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#25F4EE" d="M27 8h6c.6 4.5 3.2 7.2 7 7.7v6c-2.7-.1-5.1-.8-7-2v11.2c0 6.2-4.5 10.6-10.4 10.6-5.7 0-10.3-4.6-10.3-10.3 0-6.1 5.2-10.9 11.6-10.2v6.1c-3.1-.6-5.7 1.3-5.7 4.1 0 2.3 1.9 4.2 4.2 4.2 2.7 0 4.6-2.1 4.6-5.1V8z"/><path fill="#FE2C55" d="M29.5 6h5.7c.7 4.2 3 6.7 6.8 7.5v5.8c-2.8-.2-5.1-.9-7-2.1v11.2c0 6.4-4.4 10.7-10.5 10.7-4.7 0-8.8-3.1-10-7.4 1.6 2.3 4.3 3.8 7.4 3.8 5.4 0 9.1-3.8 9.1-9.5V14.8c1.9 1.2 4.2 1.9 7 2.1v-1.7c-4.7-1.3-7.5-4.5-8.5-9.2z"/><path fill="#111" d="M28 7h5.5c.6 4 2.9 6.4 6.5 7.1v4.7c-3.1-.3-5.6-1.3-7.7-3v12.8c0 5.6-3.8 9.4-9 9.4-5 0-9-4-9-9s4-9 9-9c.6 0 1.2.1 1.7.2v5.2c-.5-.2-1-.3-1.7-.3-2.2 0-4 1.8-4 4s1.8 4 4 4c2.8 0 4.7-2 4.7-5V7z"/></svg></div>
+            <span class="red-texto">TikTok</span>
         </a>
 
-        <a
-            class="red"
-            href="https://www.facebook.com/share/1GvNqU2Am7/?mibextid=wwXIfr"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="red-icono facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M13.8 22v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V14h2.8v8h3.5z"/>
-                </svg>
-            </div>
-            Facebook
+        <a class="red" href="https://www.facebook.com/share/1GvNqU2Am7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+            <div class="red-icono facebook"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#1877F2"/><path fill="#fff" d="M27.5 39V25.5h4.6l.7-5.3h-5.3v-3.4c0-1.5.4-2.6 2.7-2.6H33V9.5c-.5-.1-2.2-.2-4.2-.2-4.2 0-7.1 2.6-7.1 7.3v3.6H17v5.3h4.7V39h5.8z"/></svg></div>
+            <span class="red-texto">Facebook</span>
         </a>
 
     </div>
