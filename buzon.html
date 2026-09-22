@@ -570,8 +570,8 @@ button:hover {
 
     <div class="hero-contenido">
 
-        <a class="volver" href="sanjuan.html">
-            <span>←</span> San Juan
+        <a class="volver" id="volverCentro" href="index.html">
+            <span>←</span> Volver
         </a>
 
         <div class="linea-roja"></div>
@@ -626,7 +626,7 @@ button:hover {
 <select id="centro" name="centro" required>
     <option value="">Selecciona tu centro</option>
     <option value="San Juan">San Juan</option>
-    <option value="Plaza del Duque">Plaza del Duque</option>
+    <option value="Duque / San Pablo">Duque / San Pablo</option>
     <option value="Nervión">Nervión</option>
     <option value="Sevilla Este">Sevilla Este</option>
     <option value="Costa de la Luz">Costa de la Luz</option>
@@ -860,6 +860,20 @@ if (centro) {
         selector.value = centro;
     }
 
+}
+
+/* VOLVER AL CENTRO CORRECTO */
+
+const volverCentro = document.getElementById("volverCentro");
+
+const paginasCentro = {
+    "San Juan": "sanjuan.html",
+    "Duque / San Pablo": "duque-san-pablo.html"
+};
+
+if (centro && volverCentro && paginasCentro[centro]) {
+    volverCentro.href = paginasCentro[centro];
+    volverCentro.innerHTML = "<span>←</span> " + centro;
 }
 
 
