@@ -464,7 +464,7 @@ button:disabled {
         </option>
 
         <option>San Juan</option>
-        <option>Plaza del Duque</option>
+        <option>Duque / San Pablo</option>
         <option>Nervión</option>
         <option>Sevilla Este</option>
         <option>Costa de la Luz</option>
@@ -601,13 +601,14 @@ if (centro) {
 const volver =
     document.getElementById("volverCentro");
 
-if (centro === "San Juan") {
+const paginasCentro = {
+    "San Juan": "sanjuan.html",
+    "Duque / San Pablo": "duque-san-pablo.html"
+};
 
-    volver.href = "sanjuan.html";
-
-    volver.innerHTML =
-        "<span>←</span> San Juan";
-
+if (centro && paginasCentro[centro]) {
+    volver.href = paginasCentro[centro];
+    volver.innerHTML = "<span>←</span> " + centro;
 }
 
 
