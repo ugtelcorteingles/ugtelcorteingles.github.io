@@ -321,7 +321,7 @@ details[open] summary::after {
 .ultimo-contenido p{font-size:13px;line-height:1.42;color:#666;margin:0 0 16px}
 .ultimo-btn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:43px;background:#e30613;color:#fff;text-decoration:none;border-radius:999px;padding:0 16px;font-size:11px;font-weight:900}
 @media(max-width:520px){
- .ultimo-card{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);padding:12px;gap:12px}
+ .ultimo-card{display:grid !important;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr) !important;padding:12px;gap:12px}
  .ultimo-miniatura{min-height:245px;border-radius:10px}
  .ultimo-contenido{padding:5px 0}
  .ultimo-meta{font-size:9px;line-height:1.25}
@@ -697,7 +697,9 @@ details[open] summary::after {
     <article class="ultimo-card">
         <div class="ultimo-visual">
             <span class="ultimo-nuevo">NUEVO</span>
-            <img class="ultimo-miniatura" src="lo-ultimo-calendario-2026.jpg" alt="Ahora todo tiene que cuadrar · calendario laboral 2026">\n        </div>\n        <div class="ultimo-contenido">
+            <img class="ultimo-miniatura" src="lo-ultimo-calendario-2026.jpg" alt="Ahora todo tiene que cuadrar · calendario laboral 2026">
+        </div>
+        <div class="ultimo-contenido">
             <div class="ultimo-meta">INFORMACIÓN · 23 SEP 2026</div>
             <h3>Ahora todo tiene que cuadrar</h3>
             <p>Ya está en Nexo el calendario del último trimestre. Revisa tu calendario anual.</p>
