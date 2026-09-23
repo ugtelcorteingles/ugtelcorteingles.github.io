@@ -531,10 +531,58 @@ details[open] summary::after {
         font-size: 34px;
     }
 }
+
+/* ACCESO TEMPORAL */
+#accessGate{position:fixed;inset:0;z-index:99999;background:#fff;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:42px 20px;min-height:100vh}
+.gate-wrap{width:100%;max-width:560px;text-align:center}
+.gate-brand{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:24px}
+.gate-brand img{width:150px;height:auto}
+.gate-brand-text{text-align:left;border-left:1px solid #bbb;padding-left:18px}
+.gate-brand-text strong{display:block;font-size:20px;line-height:1.05}
+.gate-brand-text span{display:block;font-size:12px;color:#666;margin-top:5px}
+.gate-line{width:58%;height:5px;background:#e30613;border-radius:50%;margin:0 auto 34px}
+.gate-card{background:#fff;border-radius:22px;padding:36px 28px 30px;box-shadow:0 10px 38px rgba(0,0,0,.10);border:1px solid #f2f2f2}
+.gate-lock{width:50px;height:50px;margin:0 auto 18px;color:#e30613}
+.gate-lock svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gate-card h1{margin:0 0 12px;font-size:30px;line-height:1.05;font-weight:900}.gate-card h1 span{color:#e30613}
+.gate-card .lead{font-size:17px;line-height:1.35;margin:0 0 12px}.gate-card .internal{font-size:13px;color:#666;margin:0 0 24px}
+.gate-input{width:100%;height:54px;border:1px solid #ccc;border-radius:13px;padding:0 16px;font-size:16px;outline:none}.gate-input:focus{border-color:#e30613;box-shadow:0 0 0 3px rgba(227,6,19,.08)}
+.gate-btn{width:100%;height:54px;border:0;border-radius:13px;background:#e30613;color:#fff;font-size:16px;font-weight:900;letter-spacing:1px;margin-top:12px;cursor:pointer}
+.gate-error{min-height:20px;margin:10px 0 0;color:#e30613;font-size:12px;font-weight:700}
+.gate-near{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;color:#777;font-size:10px;letter-spacing:3px}.gate-near:before,.gate-near:after{content:"";height:1px;background:#ddd;flex:1}
+.gate-foot{font-size:11px;color:#666;margin-top:20px}
+.gate-slogan{margin-top:32px;font-size:18px;font-weight:900}.gate-slogan span{color:#e30613}
+@media(max-width:520px){#accessGate{padding:26px 16px}.gate-brand{gap:12px}.gate-brand img{width:122px}.gate-brand-text{padding-left:12px}.gate-brand-text strong{font-size:17px}.gate-card{padding:30px 20px 24px}.gate-card h1{font-size:27px}.gate-card .lead{font-size:16px}.gate-line{margin-bottom:26px}}
+body.gate-locked>header,body.gate-locked>.hero,body.gate-locked>main{visibility:hidden}
 </style>
 </head>
 
-<body>
+<body class="gate-locked">
+
+<div id="accessGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-wrap">
+    <div class="gate-brand">
+      <img src="logo.png" alt="UGT FeSMC">
+      <div class="gate-brand-text"><strong>EL CORTE INGLÉS</strong><span>Andalucía Occidental · Extremadura</span></div>
+    </div>
+    <div class="gate-line"></div>
+    <section class="gate-card">
+      <div class="gate-lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle><path d="M12 16v2"></path></svg></div>
+      <h1 id="gateTitle">Web en fase de <span>revisión</span></h1>
+      <p class="lead">Estamos ultimando este espacio<br>para estar más cerca de ti.</p>
+      <p class="internal">Acceso temporal para revisión interna.</p>
+      <form id="accessForm">
+        <input class="gate-input" id="accessCode" type="password" autocomplete="current-password" placeholder="Introduce el código" aria-label="Código de acceso">
+        <button class="gate-btn" type="submit">ENTRAR →</button>
+        <div class="gate-error" id="accessError" aria-live="polite"></div>
+      </form>
+      <div class="gate-near">SINDICATO CERCA DE TI</div>
+      <div class="gate-foot">UGT El Corte Inglés · Andalucía Occidental · Extremadura</div>
+    </section>
+    <div class="gate-slogan">Tu trabajo, <span>nuestros derechos</span></div>
+  </div>
+</div>
+
 
 <header>
     <div class="cabecera">
@@ -765,5 +813,27 @@ details[open] summary::after {
 
 </main>
 
+<script>
+(function(){
+  var key="ugtAoxReviewAccess";
+  var gate=document.getElementById("accessGate");
+  function unlock(){
+    document.body.classList.remove("gate-locked");
+    gate.style.display="none";
+  }
+  if(sessionStorage.getItem(key)==="ok"){ unlock(); return; }
+  document.getElementById("accessForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var value=document.getElementById("accessCode").value;
+    if(value==="ugteci-aox20112026"){
+      sessionStorage.setItem(key,"ok");
+      unlock();
+    } else {
+      document.getElementById("accessError").textContent="Código incorrecto. Inténtalo de nuevo.";
+      document.getElementById("accessCode").select();
+    }
+  });
+})();
+</script>
 </body>
 </html>
