@@ -533,26 +533,29 @@ details[open] summary::after {
 }
 
 /* ACCESO TEMPORAL */
-#accessGate{position:fixed;inset:0;z-index:99999;background:#fff;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:42px 20px;min-height:100vh}
-.gate-wrap{width:100%;max-width:560px;text-align:center}
-.gate-brand{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:24px}
-.gate-brand img{width:150px;height:auto}
-.gate-brand-text{text-align:left;border-left:1px solid #bbb;padding-left:18px}
-.gate-brand-text strong{display:block;font-size:20px;line-height:1.05}
-.gate-brand-text span{display:block;font-size:12px;color:#666;margin-top:5px}
-.gate-line{width:58%;height:5px;background:#e30613;border-radius:50%;margin:0 auto 34px}
-.gate-card{background:#fff;border-radius:22px;padding:36px 28px 30px;box-shadow:0 10px 38px rgba(0,0,0,.10);border:1px solid #f2f2f2}
-.gate-lock{width:50px;height:50px;margin:0 auto 18px;color:#e30613}
+#accessGate{position:fixed;inset:0;z-index:99999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:34px 20px 0;min-height:100vh;background:linear-gradient(to bottom,rgba(255,255,255,.98) 0%,rgba(255,255,255,.96) 58%,rgba(255,255,255,.68) 76%,rgba(255,255,255,.93) 100%),url("portada.png") center bottom/cover no-repeat}
+.gate-wrap{width:100%;max-width:600px;text-align:center;min-height:100vh}
+.gate-brand{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 10px}
+.gate-brand img{width:165px;height:auto}
+.gate-brand-text{text-align:left;border-left:1px solid #999;padding-left:18px}
+.gate-brand-text strong{display:block;font-size:21px;line-height:1.05}
+.gate-brand-text span{display:block;font-size:12px;color:#666;margin-top:6px}
+.gate-line{width:64%;height:5px;background:#e30613;border-radius:50%;margin:0 auto 8px}
+.gate-topline{font-size:10px;letter-spacing:4px;color:#65707a;margin:0 0 24px}
+.gate-card{background:rgba(255,255,255,.97);border-radius:24px;padding:34px 30px 27px;box-shadow:0 12px 40px rgba(0,0,0,.11);border:1px solid rgba(0,0,0,.04)}
+.gate-lock{width:52px;height:52px;margin:0 auto 19px;color:#e30613}
 .gate-lock svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.gate-card h1{margin:0 0 12px;font-size:30px;line-height:1.05;font-weight:900}.gate-card h1 span{color:#e30613}
-.gate-card .lead{font-size:17px;line-height:1.35;margin:0 0 12px}.gate-card .internal{font-size:13px;color:#666;margin:0 0 24px}
-.gate-input{width:100%;height:54px;border:1px solid #ccc;border-radius:13px;padding:0 16px;font-size:16px;outline:none}.gate-input:focus{border-color:#e30613;box-shadow:0 0 0 3px rgba(227,6,19,.08)}
-.gate-btn{width:100%;height:54px;border:0;border-radius:13px;background:#e30613;color:#fff;font-size:16px;font-weight:900;letter-spacing:1px;margin-top:12px;cursor:pointer}
+.gate-card h1{margin:0 0 13px;font-size:31px;line-height:1.05;font-weight:900}.gate-card h1 span{color:#e30613}
+.gate-card .lead{font-size:18px;line-height:1.35;margin:0 0 13px}.gate-card .internal{font-size:13px;color:#66717b;margin:0 0 24px}
+.gate-input{width:100%;height:56px;border:1px solid #bbc0c5;border-radius:13px;padding:0 17px;font-size:16px;outline:none;background:#fff}.gate-input:focus{border-color:#e30613;box-shadow:0 0 0 3px rgba(227,6,19,.08)}
+.gate-btn{width:100%;height:56px;border:0;border-radius:13px;background:#e30613;color:#fff;font-size:17px;font-weight:900;letter-spacing:1px;margin-top:11px;cursor:pointer}
 .gate-error{min-height:20px;margin:10px 0 0;color:#e30613;font-size:12px;font-weight:700}
-.gate-near{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;color:#777;font-size:10px;letter-spacing:3px}.gate-near:before,.gate-near:after{content:"";height:1px;background:#ddd;flex:1}
-.gate-foot{font-size:11px;color:#666;margin-top:20px}
-.gate-slogan{margin-top:32px;font-size:18px;font-weight:900}.gate-slogan span{color:#e30613}
-@media(max-width:520px){#accessGate{padding:26px 16px}.gate-brand{gap:12px}.gate-brand img{width:122px}.gate-brand-text{padding-left:12px}.gate-brand-text strong{font-size:17px}.gate-card{padding:30px 20px 24px}.gate-card h1{font-size:27px}.gate-card .lead{font-size:16px}.gate-line{margin-bottom:26px}}
+.gate-near{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:15px;color:#65707a;font-size:10px;letter-spacing:3px}.gate-near:before,.gate-near:after{content:"";height:1px;background:#d3d7da;flex:1}
+.gate-foot{font-size:11px;color:#606870;margin-top:18px}
+.gate-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;min-height:230px;padding:38px 5px 26px}
+.gate-slogan{text-align:left;font-size:21px;font-weight:900;line-height:1.05}.gate-slogan span{color:#e30613;display:block;margin-top:4px}
+.gate-features{display:flex;gap:18px;justify-content:flex-end}.gate-feature{width:76px;font-size:9px;line-height:1.2;color:#3f474e;font-weight:700}.gate-feature i{width:39px;height:39px;border:1.5px solid #65707a;border-radius:50%;display:grid;place-items:center;margin:0 auto 7px;font-style:normal;font-size:18px}
+@media(max-width:520px){#accessGate{padding:26px 16px 0}.gate-brand{gap:12px}.gate-brand img{width:126px}.gate-brand-text{padding-left:12px}.gate-brand-text strong{font-size:17px}.gate-brand-text span{font-size:10px}.gate-line{width:62%;margin-top:6px}.gate-topline{margin-bottom:20px;font-size:9px}.gate-card{padding:29px 20px 23px}.gate-card h1{font-size:27px}.gate-card .lead{font-size:16px}.gate-bottom{min-height:205px;padding-top:32px}.gate-slogan{font-size:18px}.gate-features{gap:8px}.gate-feature{width:60px;font-size:8px}.gate-feature i{width:34px;height:34px;font-size:15px}}
 body.gate-locked>header,body.gate-locked>.hero,body.gate-locked>main{visibility:hidden}
 </style>
 </head>
@@ -565,7 +568,7 @@ body.gate-locked>header,body.gate-locked>.hero,body.gate-locked>main{visibility:
       <img src="logo.png" alt="UGT FeSMC">
       <div class="gate-brand-text"><strong>EL CORTE INGLÉS</strong><span>Andalucía Occidental · Extremadura</span></div>
     </div>
-    <div class="gate-line"></div>
+    <div class="gate-line"></div>\n    <div class="gate-topline">SINDICATO CERCA DE TI</div>
     <section class="gate-card">
       <div class="gate-lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle><path d="M12 16v2"></path></svg></div>
       <h1 id="gateTitle">Web en fase de <span>revisión</span></h1>
@@ -579,7 +582,7 @@ body.gate-locked>header,body.gate-locked>.hero,body.gate-locked>main{visibility:
       <div class="gate-near">SINDICATO CERCA DE TI</div>
       <div class="gate-foot">UGT El Corte Inglés · Andalucía Occidental · Extremadura</div>
     </section>
-    <div class="gate-slogan">Tu trabajo, <span>nuestros derechos</span></div>
+    <div class="gate-bottom"><div class="gate-slogan">Tu trabajo,<span>nuestros derechos</span></div><div class="gate-features" aria-hidden="true"><div class="gate-feature"><i>♟</i>INFORMACIÓN<br>Y APOYO</div><div class="gate-feature"><i>●</i>CONTACTO<br>DIRECTO</div><div class="gate-feature"><i>◇</i>UN PROYECTO<br>CONTIGO</div></div></div>
   </div>
 </div>
 
