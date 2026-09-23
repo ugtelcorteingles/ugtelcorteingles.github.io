@@ -311,16 +311,25 @@ details[open] summary::after {
 
 /* LO ÚLTIMO */
 .lo-ultimo{margin-top:30px}
-.ultimo-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 13px rgba(0,0,0,.08);display:grid;grid-template-columns:42% 58%}
-.ultimo-visual{background:#202020;min-height:220px;display:flex;align-items:center;justify-content:center;padding:18px;position:relative;overflow:hidden}
-.ultimo-miniatura{width:100%;max-width:250px;max-height:330px;object-fit:contain;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.22);display:block}
-.ultimo-nuevo{position:absolute;left:12px;top:12px;background:#e30613;color:#fff;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.7px}
-.ultimo-contenido{padding:22px 20px;display:flex;flex-direction:column;justify-content:center}
+.ultimo-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 13px rgba(0,0,0,.08);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:stretch;padding:18px;gap:18px}
+.ultimo-visual{position:relative;min-width:0}
+.ultimo-miniatura{width:100%;height:100%;min-height:260px;object-fit:cover;object-position:center;border-radius:12px;display:block}
+.ultimo-nuevo{position:absolute;left:-5px;top:-5px;background:#e30613;color:#fff;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900;letter-spacing:.7px;z-index:2}
+.ultimo-contenido{padding:8px 4px;display:flex;flex-direction:column;justify-content:center;min-width:0}
 .ultimo-meta{font-size:10px;font-weight:900;color:#e30613;letter-spacing:.7px;margin-bottom:8px}
-.ultimo-contenido h3{font-size:23px;line-height:1.05;margin:0 0 9px;font-weight:900}
+.ultimo-contenido h3{font-size:23px;line-height:1.05;margin:0 0 10px;font-weight:900}
 .ultimo-contenido p{font-size:13px;line-height:1.42;color:#666;margin:0 0 16px}
-.ultimo-btn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:43px;background:#e30613;color:#fff;text-decoration:none;border-radius:999px;padding:0 17px;font-size:11px;font-weight:900}
-@media(max-width:520px){.ultimo-card{grid-template-columns:1fr}.ultimo-visual{min-height:235px}.ultimo-miniatura{max-width:180px}.ultimo-contenido{padding:19px}.ultimo-contenido h3{font-size:22px}}
+.ultimo-btn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:43px;background:#e30613;color:#fff;text-decoration:none;border-radius:999px;padding:0 16px;font-size:11px;font-weight:900}
+@media(max-width:520px){
+ .ultimo-card{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);padding:12px;gap:12px}
+ .ultimo-miniatura{min-height:245px;border-radius:10px}
+ .ultimo-contenido{padding:5px 0}
+ .ultimo-meta{font-size:9px;line-height:1.25}
+ .ultimo-contenido h3{font-size:18px;line-height:1.04}
+ .ultimo-contenido p{font-size:11px;line-height:1.35;margin-bottom:12px}
+ .ultimo-btn{min-height:38px;padding:0 11px;font-size:9px}
+ .ultimo-nuevo{left:-3px;top:-3px}
+}
 
 /* REDES EN PORTADA */
 .social-portada {
@@ -692,7 +701,7 @@ details[open] summary::after {
             <div class="ultimo-meta">INFORMACIÓN · 23 SEP 2026</div>
             <h3>Ahora todo tiene que cuadrar</h3>
             <p>Ya está en Nexo el calendario del último trimestre. Revisa tu calendario anual.</p>
-            <a class="ultimo-btn" href="contacto.html">VER INFORMACIÓN →</a>
+            <a class="ultimo-btn" href="lo-ultimo-calendario-2026.jpg" target="_blank" rel="noopener noreferrer">VER INFORMACIÓN →</a>
         </div>
     </article>
 </section>
