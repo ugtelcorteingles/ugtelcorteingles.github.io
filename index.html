@@ -313,8 +313,7 @@ details[open] summary::after {
 .lo-ultimo{margin-top:30px}
 .ultimo-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 13px rgba(0,0,0,.08);display:grid;grid-template-columns:42% 58%}
 .ultimo-visual{background:#202020;min-height:220px;display:flex;align-items:center;justify-content:center;padding:18px;position:relative;overflow:hidden}
-.ultimo-miniatura{width:100%;max-width:220px;aspect-ratio:4/5;border-radius:10px;background:linear-gradient(145deg,#fff 0 62%,#e30613 62%);box-shadow:0 5px 18px rgba(0,0,0,.22);padding:15px;color:#111;display:flex;flex-direction:column;justify-content:space-between}
-.ultimo-miniatura small{font-size:9px;font-weight:900;color:#e30613}.ultimo-miniatura strong{font-size:23px;line-height:.95;font-weight:900}.ultimo-miniatura span{font-size:11px;font-weight:800}.ultimo-miniatura b{color:#fff;font-size:11px}
+.ultimo-miniatura{width:100%;max-width:250px;max-height:330px;object-fit:contain;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.22);display:block}
 .ultimo-nuevo{position:absolute;left:12px;top:12px;background:#e30613;color:#fff;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.7px}
 .ultimo-contenido{padding:22px 20px;display:flex;flex-direction:column;justify-content:center}
 .ultimo-meta{font-size:10px;font-weight:900;color:#e30613;letter-spacing:.7px;margin-bottom:8px}
@@ -689,14 +688,7 @@ details[open] summary::after {
     <article class="ultimo-card">
         <div class="ultimo-visual">
             <span class="ultimo-nuevo">NUEVO</span>
-            <div class="ultimo-miniatura" aria-label="Ahora todo tiene que cuadrar">
-                <small>UGT · INFORMACIÓN</small>
-                <strong>AHORA TODO<br><span style="color:#e30613;font-size:inherit">TIENE QUE CUADRAR</span></strong>
-                <span>Revisa tu calendario anual</span>
-                <b>JORNADA · DESCANSOS · FINES DE SEMANA · DRC</b>
-            </div>
-        </div>
-        <div class="ultimo-contenido">
+            <img class="ultimo-miniatura" src="lo-ultimo-calendario-2026.jpg" alt="Ahora todo tiene que cuadrar · calendario laboral 2026">\n        </div>\n        <div class="ultimo-contenido">
             <div class="ultimo-meta">INFORMACIÓN · 23 SEP 2026</div>
             <h3>Ahora todo tiene que cuadrar</h3>
             <p>Ya está en Nexo el calendario del último trimestre. Revisa tu calendario anual.</p>
